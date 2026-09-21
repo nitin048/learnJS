@@ -386,7 +386,7 @@ learnJS/
 
 ## 🎓 Attribution & Credits
 
-- **Course Creator**: [AG Coding School](https://www.youtube.com/@SheryiansCodingSchool)
+- **Course Creator**: [AG Coding School](https://www.youtube.com/@AGCodingSchool)
 - **Lead Instructor**: Harsh Sharma
 - **Original Masterclass**: [JavaScript - Learn Everything (8-Hour Masterclass)](https://www.youtube.com/watch?v=a-wVHL0lpb0)
 

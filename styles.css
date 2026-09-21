@@ -686,14 +686,12 @@ body {
 }
 .callout-info .callout-title { color: #38bdf8; }
 
-.callout-ag,
-.callout-sheryians {
+.callout-ag {
   background-color: var(--accent-primary-dim);
   border-color: var(--accent-primary);
   color: #fef3c7;
 }
-.callout-ag .callout-title,
-.callout-sheryians .callout-title { color: #fbbf24; }
+.callout-ag .callout-title { color: #fbbf24; }
 
 .callout-warning {
   background-color: var(--accent-rose-dim);
