@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Masterclass - Complete Interactive Study Guide | Sheryians Coding School</title>
+  <meta name="description" content="Interactive study guide, live code runner, and comprehensive notes for JavaScript Full Course (Sheryians Coding School)." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       Sticky App Header
+       ======================================================================== -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="brand-badge">JS</div>
+      <div>
+        <h1 class="brand-title">JavaScript Masterclass Notes</h1>
+        <span class="brand-subtitle">Sheryians Coding School • "Learn Everything" Course Guide</span>
+      </div>
+    </div>
+
+    <!-- Center Navigation Tabs -->
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <button class="tab-btn active" data-view="notes">📖 Study Notes</button>
+      <button class="tab-btn" data-view="ide">⚡ Live IDE & Playground</button>
+      <button class="tab-btn" data-view="quiz">🎯 Quiz & Assessment</button>
+      <button class="tab-btn" data-view="flashcards">🗂️ Flashcards</button>
+      <button class="tab-btn" data-view="interview">💡 Tricky Interview Q&A</button>
+      <button class="tab-btn" data-view="challenges">💻 Practice Challenges</button>
+    </nav>
+
+    <!-- Header Controls -->
+    <div class="header-controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="global-search" placeholder="Search concepts, methods, topics..." />
+      </div>
+
+      <div class="progress-widget" title="Course Completion Progress">
+        <div class="progress-bar-mini">
+          <div class="progress-fill-mini" id="progress-fill-mini"></div>
+        </div>
+        <span id="progress-text">0% Completed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Main App Container (Sidebar + Content)
+       ======================================================================== -->
+  <div class="app-container">
+    
+    <!-- Sidebar Curriculum Navigation -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+          <span>Course Modules</span>
+          <span style="font-size:0.75rem; color:var(--accent-primary);">10 Modules</span>
+        </div>
+      </div>
+
+      <ul class="module-nav-list">
+        <li>
+          <a href="#mod-1" class="module-nav-item active">
+            <input type="checkbox" class="module-checkbox" data-module="mod-1" title="Mark complete" />
+            <span class="module-nav-text">1. JS Architecture & Engine</span>
+            <span class="module-timestamp">00:00</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-2" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-2" title="Mark complete" />
+            <span class="module-nav-text">2. Variables, Scope & Hoisting</span>
+            <span class="module-timestamp">10:20</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-3" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-3" title="Mark complete" />
+            <span class="module-nav-text">3. Data Types & Type System</span>
+            <span class="module-timestamp">01:06:48</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-4" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-4" title="Mark complete" />
+            <span class="module-nav-text">4. Operators & Expressions</span>
+            <span class="module-timestamp">02:03:57</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-5" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-5" title="Mark complete" />
+            <span class="module-nav-text">5. Control Flow & Branching</span>
+            <span class="module-timestamp">02:51:12</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-6" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-6" title="Mark complete" />
+            <span class="module-nav-text">6. Loops & Iterations</span>
+            <span class="module-timestamp">03:20:40</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-7" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-7" title="Mark complete" />
+            <span class="module-nav-text">7. Functions Deep Dive</span>
+            <span class="module-timestamp">04:39:18</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-8" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-8" title="Mark complete" />
+            <span class="module-nav-text">8. Arrays & Modern Methods</span>
+            <span class="module-timestamp">06:17:14</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-9" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-9" title="Mark complete" />
+            <span class="module-nav-text">9. Objects & References</span>
+            <span class="module-timestamp">07:16:36</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-10" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-10" title="Mark complete" />
+            <span class="module-nav-text">10. Summary & Next Steps</span>
+            <span class="module-timestamp">08:02:16</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0" target="_blank" rel="noopener noreferrer" class="yt-link-btn">
+          <span>▶</span> Watch Video on YouTube
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Stream -->
+    <main class="app-content">
+
+      <!-- ==================================================================
+           VIEW 1: STUDY NOTES (Default View)
+           ================================================================== -->
+      <section id="view-notes" class="view-section active">
+        
+        <!-- Hero Banner -->
+        <div class="course-hero">
+          <div class="hero-pill">⚡ Master JavaScript Core</div>
+          <h2 class="hero-title">JavaScript: Learn Everything Masterclass</h2>
+          <p class="hero-desc">
+            Complete study companion for the legendary 8-hour masterclass by <strong>Sheryians Coding School</strong>.
+            Packed with visual memory models, deep runtime mechanics, copyable and runnable code snippets, and interview gotchas.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">⏱️ Duration: <strong>8h 03m</strong></div>
+            <div class="stat-item">🎯 Modules: <strong>10 Comprehensive Chapters</strong></div>
+            <div class="stat-item">⚡ Live IDE: <strong>Included</strong></div>
+            <div class="stat-item">💡 Quizzes & Challenges: <strong>30+ Interactive Tasks</strong></div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             MODULE 1: JS Architecture & Engine
+             ================================================================ -->
+        <article class="topic-card" id="mod-1">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 01</span>
+              <h2 class="topic-title">JavaScript Architecture & Engine Foundations</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=0s" target="_blank" class="timestamp-badge">
+                ▶ 00:00 Intro & Setup
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. What is JavaScript?</h3>
+            <p>
+              JavaScript is a <strong>high-level, single-threaded, garbage-collected, interpreted (or JIT-compiled), dynamic language with a non-blocking event loop</strong>.
+              It conforms to the <strong>ECMAScript (ES)</strong> specification.
+            </p>
+
+            <div class="callout callout-sheryians">
+              <span class="callout-icon">💡</span>
+              <div class="callout-body">
+                <div class="callout-title">Sheryians Key Insight</div>
+                JavaScript does not directly understand human English code. The browser uses a JavaScript Engine (like Google Chrome's <strong>V8</strong>, Firefox's <strong>SpiderMonkey</strong>, or Safari's <strong>JavaScriptCore</strong>) to convert source code into machine-executable binary bytecode.
+              </div>
+            </div>
+
+            <h3>2. How the V8 Engine Runs Code</h3>
+            <div class="diagram-card">
+              <div class="diagram-header">⚙️ V8 Pipeline Under the Hood</div>
+              <div class="diagram-grid">
+                <div class="diagram-box primary">
+                  <div class="diagram-box-title">1. Parser & AST</div>
+                  <div class="diagram-box-body">Code is tokenized into lexical units and transformed into an <strong>Abstract Syntax Tree (AST)</strong>.</div>
+                </div>
+                <div class="diagram-box cyan">
+                  <div class="diagram-box-title">2. Ignition Interpreter</div>
+                  <div class="diagram-box-body">Converts the AST into unoptimized bytecode for instantaneous startup execution.</div>
+                </div>
+                <div class="diagram-box emerald">
+                  <div class="diagram-box-title">3. TurboFan JIT Compiler</div>
+                  <div class="diagram-box-body">Monitors "hot functions" (frequently called code) and compiles them into highly optimized machine code.</div>
+                </div>
+              </div>
+            </div>
+
+            <h3>3. Execution Context & The Call Stack</h3>
+            <p>
+              Everything in JavaScript happens inside an <strong>Execution Context</strong>. When JS code runs, the Global Execution Context (GEC) is created with two distinct phases:
+            </p>
+            <ol>
+              <li><strong>Memory Creation Phase (Variable Environment):</strong> Memory is allocated for variables and functions. `var` is initialized to `undefined`, functions are copied completely.</li>
+              <li><strong>Code Execution Phase (Thread of Execution):</strong> Code is executed line by line synchronously from top to bottom.</li>
+            </ol>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ JavaScript Execution Flow</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// Execution Context & Call Stack Demo
+function first() {
+  console.log("Entering first()");
+  second();
+  console.log("Exiting first()");
+}
+
+function second() {
+  console.log("Inside second()");
+}
+
+console.log("Global Execution Started");
+first();
+console.log("Global Execution Finished");</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 2: Variables, Scope & Hoisting
+             ================================================================ -->
+        <article class="topic-card" id="mod-2">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 02</span>
+              <h2 class="topic-title">Variables, Declarations & Hoisting</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=620s" target="_blank" class="timestamp-badge">
+                ▶ 10:20 Variables & Hoisting
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. `var` vs `let` vs `const`</h3>
+            <p>
+              In modern JavaScript (ES6+), variable declarations differ drastically by scope, hoisting behavior, and re-assignment capabilities.
+            </p>
+
+            <div class="table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th><code>var</code> (ES5)</th>
+                    <th><code>let</code> (ES6)</th>
+                    <th><code>const</code> (ES6)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Scope</strong></td>
+                    <td>Function / Global</td>
+                    <td>Block Scoped <code>{ }</code></td>
+                    <td>Block Scoped <code>{ }</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hoisting</strong></td>
+                    <td>Hoisted & initialized as <code>undefined</code></td>
+                    <td>Hoisted into TDZ (Temporal Dead Zone)</td>
+                    <td>Hoisted into TDZ (Temporal Dead Zone)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Re-declaration</strong></td>
+                    <td>✅ Allowed in same scope</td>
+                    <td>❌ SyntaxError</td>
+                    <td>❌ SyntaxError</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Re-assignment</strong></td>
+                    <td>✅ Allowed</td>
+                    <td>✅ Allowed</td>
+                    <td>❌ TypeError (Constant)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Initial Value Required?</strong></td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>✅ Yes (Must initialize at declaration)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>2. Hoisting & The Temporal Dead Zone (TDZ)</h3>
+            <p>
+              <strong>Hoisting</strong> is JavaScript's default behavior of moving declarations to the top of the current scope during the Memory Creation phase.
+            </p>
+            <div class="callout callout-warning">
+              <span class="callout-icon">⚠️</span>
+              <div class="callout-body">
+                <div class="callout-title">The TDZ Trap</div>
+                <code>let</code> and <code>const</code> ARE hoisted, but they cannot be accessed until their declaration line is executed. The region between entering the scope and the declaration is called the <strong>Temporal Dead Zone (TDZ)</strong>. Accessing them inside TDZ throws a <code>ReferenceError: Cannot access 'x' before initialization</code>.
+              </div>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Hoisting & Scope Code Demo</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. var Hoisting Demo
+console.log("hoistedVar:", hoistedVar); // logs 'undefined'
+var hoistedVar = "Declared with var";
+
+// 2. Block Scope Isolation
+{
+  var globalPollution = "I leak outside!";
+  let blockSafe = "I stay inside!";
+  const constSafe = 42;
+}
+console.log(globalPollution); // Accessible!
+// console.log(blockSafe);   // ReferenceError: blockSafe is not defined
+
+// 3. Temporal Dead Zone Demonstration
+try {
+  console.log(tdzVar); // ReferenceError
+  let tdzVar = "Hello TDZ";
+} catch (err) {
+  console.error("TDZ Caught:", err.message);
+}</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 3: Data Types & Type System (Timestamp 5815s)
+             ================================================================ -->
+        <article class="topic-card" id="mod-3">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 03</span>
+              <h2 class="topic-title">Data Types & The JavaScript Type System</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=4008s" target="_blank" class="timestamp-badge">
+                ▶ 01:06:48 (5815s Topic Zone)
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Primitive vs Reference Types</h3>
+            <p>
+              JavaScript divides all values into two categories based on how they are stored and managed in memory:
+            </p>
+
+            <div class="diagram-card">
+              <div class="diagram-header">🧠 Memory Allocation Architecture</div>
+              <div class="diagram-grid">
+                <div class="diagram-box cyan">
+                  <div class="diagram-box-title">Primitive Types (Stack)</div>
+                  <div class="diagram-box-body">
+                    • <code>Number</code>, <code>String</code>, <code>Boolean</code>, <code>Undefined</code>, <code>Null</code>, <code>Symbol</code>, <code>BigInt</code><br/>
+                    • Stored directly in the <strong>Stack Memory</strong><br/>
+                    • <strong>Immutable</strong> & passed <strong>by value</strong> (copies actual value).
+                  </div>
+                </div>
+                <div class="diagram-box primary">
+                  <div class="diagram-box-title">Reference Types (Heap)</div>
+                  <div class="diagram-box-body">
+                    • <code>Object</code>, <code>Array</code>, <code>Function</code>, <code>Date</code>, <code>Map</code>, <code>Set</code><br/>
+                    • Stored in the dynamic <strong>Memory Heap</strong><br/>
+                    • The Stack only stores a <strong>Pointer / Reference Address</strong> to the Heap!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout callout-sheryians">
+              <span class="callout-icon">💡</span>
+              <div class="callout-body">
+                <div class="callout-title">Sheryians Golden Rule of References</div>
+                When you assign an object/array to another variable (e.g. <code>let b = a</code>), you are NOT making a copy of the data. Both variables point to the <strong>exact same memory address in the Heap</strong>. Modifying one mutates the other!
+              </div>
+            </div>
+
+            <h3>2. Type Coercion: Implicit vs Explicit</h3>
+            <p>
+              Type coercion is the automatic or manual conversion of values from one data type to another.
+            </p>
+            <ul>
+              <li><strong>String Coercion:</strong> Whenever <code>+</code> is used with any string operand, JS converts all operands to strings and concatenates (e.g. <code>"5" + 2 === "52"</code>).</li>
+              <li><strong>Numeric Coercion:</strong> Operators like <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> convert operands into numbers (e.g. <code>"5" - 2 === 3</code>).</li>
+              <li><strong>Boolean Coercion:</strong> Values converted inside <code>if()</code> or with <code>Boolean()</code> / <code>!!</code>.</li>
+            </ul>
+
+            <h3>3. The 8 Falsy Values in JavaScript</h3>
+            <div class="callout callout-warning">
+              <span class="callout-icon">⚠️</span>
+              <div class="callout-body">
+                <div class="callout-title">Must Memorize Falsy List</div>
+                There are only 8 falsy values in JavaScript:
+                <code>false</code>, <code>0</code>, <code>-0</code>, <code>0n</code> (BigInt zero), <code>""</code> (empty string), <code>null</code>, <code>undefined</code>, and <code>NaN</code>.<br/>
+                <strong>EVERYTHING ELSE IS TRUTHY</strong> (including <code>[]</code>, <code>{}</code>, <code>"0"</code>, <code>"false"</code>, and negative numbers like <code>-1</code>).
+              </div>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Type Quirks & Deep Cloning</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. Primitive Copy vs Reference Mutation
+let primitiveA = 50;
+let primitiveB = primitiveA;
+primitiveB = 100;
+console.log("primitiveA:", primitiveA); // 50 (Unchanged!)
+
+let refArr1 = ["Sheryians", "Coder"];
+let refArr2 = refArr1; // Shared pointer!
+refArr2.push("JavaScript Pro");
+console.log("refArr1 length:", refArr1.length); // 3 (Mutated!)
+
+// 2. Safe Deep Cloning with modern structuredClone()
+let original = { name: "Harsh", details: { city: "Bhopal" } };
+let deepCloned = structuredClone(original);
+deepCloned.details.city = "Bangalore";
+console.log("original city:", original.details.city); // "Bhopal" (Safe!)
+
+// 3. Type Coercion Edge Cases
+console.log("[] == false:", [] == false); // true!
+console.log("[] == ![]:", [] == ![]);     // true! (Coerced to 0 == 0)
+console.log("typeof null:", typeof null); // "object" (Historical bug)
+console.log("typeof NaN:", typeof NaN);   // "number"</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 4: Operators & Expressions
+             ================================================================ -->
+        <article class="topic-card" id="mod-4">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 04</span>
+              <h2 class="topic-title">Operators & Expressions</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=7437s" target="_blank" class="timestamp-badge">
+                ▶ 02:03:57 Operators
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Comparison: Strict (`===`) vs Loose (`==`)</h3>
+            <p>
+              Always default to <strong>strict equality (<code>===</code>)</strong> in production code:
+            </p>
+            <ul>
+              <li><code>==</code> (Abstract Equality): Coerces operand types if they differ before comparison (e.g. <code>5 == "5"</code> is <code>true</code>).</li>
+              <li><code>===</code> (Strict Equality): Compares both value AND data type without any coercion (e.g. <code>5 === "5"</code> is <code>false</code>).</li>
+            </ul>
+
+            <h3>2. Logical Short-Circuiting (`&&`, `||`, `??`)</h3>
+            <p>
+              Logical operators in JavaScript don't just return booleans; they return the <strong>actual operand value</strong>:
+            </p>
+            <ul>
+              <li><code>A && B</code> (AND): Returns <code>A</code> if <code>A</code> is falsy; otherwise returns <code>B</code>.</li>
+              <li><code>A || B</code> (OR): Returns <code>A</code> if <code>A</code> is truthy; otherwise returns <code>B</code>.</li>
+              <li><code>A ?? B</code> (Nullish Coalescing): Returns <code>B</code> <strong>ONLY if <code>A</code> is <code>null</code> or <code>undefined</code></strong>. If <code>A</code> is <code>0</code>, <code>""</code>, or <code>false</code>, it returns <code>A</code>.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Short-Circuit & Nullish Coalescing</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// Difference between || and ??
+let userScore = 0; // 0 is a valid score!
+
+let display1 = userScore || 100;
+console.log("Using || fallback:", display1); // 100 (Bug! Overrode 0)
+
+let display2 = userScore ?? 100;
+console.log("Using ?? fallback:", display2); // 0 (Correct! 0 preserved)
+
+// Short-circuiting execution
+let isLoggedIn = true;
+isLoggedIn && console.log("User is authenticated, welcome back!");
+
+// Ternary Operator
+let age = 19;
+let status = age >= 18 ? "Eligible to vote" : "Underage";
+console.log("Status:", status);</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 5: Control Flow
+             ================================================================ -->
+        <article class="topic-card" id="mod-5">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 05</span>
+              <h2 class="topic-title">Control Flow & Branching</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=10272s" target="_blank" class="timestamp-badge">
+                ▶ 02:51:12 Control Flow
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Conditionals (`if`, `else if`, `else`)</h3>
+            <p>
+              Execute different blocks of code based on truthy/falsy evaluation.
+            </p>
+
+            <h3>2. The Clean Code Pattern: Guard Clauses / Early Return</h3>
+            <p>
+              Instead of deeply nesting multiple <code>if-else</code> ladders, modern JavaScript developers use <strong>Guard Clauses</strong> to exit early.
+            </p>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Guard Clauses vs Nested Ifs</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// ❌ Bad: Deeply Nested
+function processPaymentBad(user, amount) {
+  if (user) {
+    if (user.isActive) {
+      if (user.balance >= amount) {
+        user.balance -= amount;
+        return "Success";
+      } else {
+        return "Insufficient Balance";
+      }
+    } else {
+      return "User Inactive";
+    }
+  } else {
+    return "No User";
+  }
+}
+
+// ✅ Good: Guard Clauses (Clean, Flat, Scalable)
+function processPaymentClean(user, amount) {
+  if (!user) return "No User";
+  if (!user.isActive) return "User Inactive";
+  if (user.balance < amount) return "Insufficient Balance";
+
+  user.balance -= amount;
+  return `Success! New Balance: ${user.balance}`;
+}
+
+const client = { isActive: true, balance: 500 };
+console.log(processPaymentClean(client, 150));</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 6: Loops & Iterations
+             ================================================================ -->
+        <article class="topic-card" id="mod-6">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 06</span>
+              <h2 class="topic-title">Loops & Iterations</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=12040s" target="_blank" class="timestamp-badge">
+                ▶ 03:20:40 Loops
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. The Core Loop Types</h3>
+            <ul>
+              <li><strong><code>for</code> loop:</strong> Known number of iterations with counter initialization, condition, and increment/decrement.</li>
+              <li><strong><code>while</code> loop:</strong> Entry-controlled loop; checks condition before running the body.</li>
+              <li><strong><code>do...while</code> loop:</strong> Exit-controlled loop; guaranteed to execute at least ONCE even if condition is false.</li>
+              <li><strong><code>for...of</code>:</strong> Iterates directly over values of iterables (Arrays, Strings, Sets, Maps).</li>
+              <li><strong><code>for...in</code>:</strong> Iterates over enumerable property keys of an Object (or indices of an Array).</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Loops & Break/Continue</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. for...of vs for...in
+const fruits = ["Apple", "Banana", "Cherry"];
+
+console.log("=== for...of (Values) ===");
+for (const fruit of fruits) {
+  console.log("Fruit:", fruit);
+}
+
+console.log("\n=== for...in (Indices / Keys) ===");
+for (const index in fruits) {
+  console.log(`Index ${index} => ${fruits[index]}`);
+}
+
+// 2. Control Statements: break and continue
+console.log("\n=== break & continue Demo ===");
+for (let i = 1; i <= 6; i++) {
+  if (i === 3) {
+    console.log(`Skipping iteration ${i} with continue`);
+    continue;
+  }
+  if (i === 5) {
+    console.log(`Breaking loop at ${i}`);
+    break;
+  }
+  console.log("Step:", i);
+}</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 7: Functions Deep Dive
+             ================================================================ -->
+        <article class="topic-card" id="mod-7">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 07</span>
+              <h2 class="topic-title">Functions Deep Dive & First-Class Citizens</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=16758s" target="_blank" class="timestamp-badge">
+                ▶ 04:39:18 Functions
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Function Declarations vs Expressions vs Arrow Functions</h3>
+            <p>
+              In JavaScript, functions are <strong>First-Class Citizens</strong>: they can be assigned to variables, passed as arguments to other functions, and returned from functions.
+            </p>
+
+            <div class="table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Function Declaration</th>
+                    <th>Function Expression</th>
+                    <th>Arrow Function (ES6)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Syntax</strong></td>
+                    <td><code>function greet() {}</code></td>
+                    <td><code>const greet = function() {}</code></td>
+                    <td><code>const greet = () => {}</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hoisting</strong></td>
+                    <td>Full function hoisted</td>
+                    <td>Variable hoisted (TDZ for let/const)</td>
+                    <td>Variable hoisted (TDZ for let/const)</td>
+                  </tr>
+                  <tr>
+                    <td><strong><code>this</code> binding</strong></td>
+                    <td>Dynamic (caller context)</td>
+                    <td>Dynamic (caller context)</td>
+                    <td><strong>Lexical</strong> (inherits from parent scope)</td>
+                  </tr>
+                  <tr>
+                    <td><strong><code>arguments</code> object</strong></td>
+                    <td>✅ Available</td>
+                    <td>✅ Available</td>
+                    <td>❌ Not available (Use <code>...rest</code>)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>2. Higher-Order Functions (HOFs) & Callbacks</h3>
+            <p>
+              A <strong>Higher-Order Function</strong> is any function that takes another function as an argument or returns a function. The passed function is called a <strong>Callback</strong>.
+            </p>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ HOFs, Callbacks & Closures Demo</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. Higher-Order Function Demonstration
+function calculate(num1, num2, operationCallback) {
+  return operationCallback(num1, num2);
+}
+
+const add = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+
+console.log("Addition via HOF:", calculate(10, 5, add));       // 15
+console.log("Multiply via HOF:", calculate(10, 5, multiply)); // 50
+
+// 2. Rest Parameters (...args)
+function sumAll(...numbers) {
+  return numbers.reduce((sum, n) => sum + n, 0);
+}
+console.log("Sum of multiple args:", sumAll(1, 2, 3, 4, 5)); // 15
+
+// 3. Closure Preview (Function Returning Function)
+function multiplier(factor) {
+  return function(number) {
+    return number * factor; // 'factor' is remembered in closure!
+  };
+}
+const double = multiplier(2);
+const triple = multiplier(3);
+console.log("Double 8:", double(8)); // 16
+console.log("Triple 8:", triple(8)); // 24</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 8: Arrays & Methods
+             ================================================================ -->
+        <article class="topic-card" id="mod-8">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 08</span>
+              <h2 class="topic-title">Arrays & Modern Array Methods</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=22634s" target="_blank" class="timestamp-badge">
+                ▶ 06:17:14 Arrays
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Mutating vs Non-Mutating Methods</h3>
+            <p>
+              Modern JS emphasizes immutability. Knowing whether an array method mutates the original array or returns a new one is critical:
+            </p>
+            <ul>
+              <li><strong>Mutating (In-place):</strong> <code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>, <code>splice()</code>, <code>sort()</code>, <code>reverse()</code>.</li>
+              <li><strong>Non-Mutating (Pure/Immutable):</strong> <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>slice()</code>, <code>concat()</code>, <code>find()</code>, <code>some()</code>, <code>every()</code>, <code>toSorted()</code>.</li>
+            </ul>
+
+            <h3>2. The Big Three: `map`, `filter`, `reduce`</h3>
+            <div class="diagram-card">
+              <div class="diagram-header">🔄 Functional Array Pipeline</div>
+              <div class="diagram-grid">
+                <div class="diagram-box cyan">
+                  <div class="diagram-box-title"><code>map(fn)</code></div>
+                  <div class="diagram-box-body">Transforms every item 1-to-1 into a new array of the exact same length.</div>
+                </div>
+                <div class="diagram-box emerald">
+                  <div class="diagram-box-title"><code>filter(fn)</code></div>
+                  <div class="diagram-box-body">Selects elements matching a boolean predicate into a new filtered array.</div>
+                </div>
+                <div class="diagram-box primary">
+                  <div class="diagram-box-title"><code>reduce(fn, init)</code></div>
+                  <div class="diagram-box-body">Boils down an entire array into a single accumulated result (number, object, array).</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Array Pipeline & Reduce Masterclass</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// E-commerce Cart Calculation
+const cart = [
+  { item: "MacBook Pro", price: 2000, category: "Tech", qty: 1 },
+  { item: "Coffee Mug", price: 15, category: "Lifestyle", qty: 2 },
+  { item: "Wireless Mouse", price: 50, category: "Tech", qty: 2 },
+  { item: "Notebook", price: 10, category: "Stationery", qty: 3 }
+];
+
+// 1. Filter Tech items
+const techItems = cart.filter(p => p.category === "Tech");
+console.log("=== Tech Items ===");
+console.table(techItems);
+
+// 2. Calculate Total Cart Value with reduce
+const grandTotal = cart.reduce((total, item) => {
+  return total + (item.price * item.qty);
+}, 0);
+console.log("Grand Total Price: $" + grandTotal);
+
+// 3. Group by Category using reduce
+const grouped = cart.reduce((acc, item) => {
+  acc[item.category] = acc[item.category] || [];
+  acc[item.category].push(item.item);
+  return acc;
+}, {});
+console.log("Grouped by Category:", grouped);</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 9: Objects & References
+             ================================================================ -->
+        <article class="topic-card" id="mod-9">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 09</span>
+              <h2 class="topic-title">Objects & References Deep Dive</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=26196s" target="_blank" class="timestamp-badge">
+                ▶ 07:16:36 Objects
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Dot Notation vs Bracket Notation</h3>
+            <p>
+              Use <strong>Dot notation (<code>obj.prop</code>)</strong> for standard static keys. Use <strong>Bracket notation (<code>obj[prop]</code>)</strong> when:
+            </p>
+            <ul>
+              <li>The property key is stored inside a variable: <code>const key = "email"; obj[key]</code></li>
+              <li>The key contains special characters or spaces: <code>obj["first-name"]</code></li>
+              <li>The key is dynamic or computed at runtime.</li>
+            </ul>
+
+            <h3>2. Modern Object Utility Methods</h3>
+            <ul>
+              <li><code>Object.keys(obj)</code>: Returns array of property names.</li>
+              <li><code>Object.values(obj)</code>: Returns array of property values.</li>
+              <li><code>Object.entries(obj)</code>: Returns array of <code>[key, value]</code> pairs.</li>
+              <li><code>Object.freeze(obj)</code>: Makes object 100% immutable (no adding, removing, or editing properties).</li>
+              <li><code>Object.seal(obj)</code>: Prevents adding or removing properties, but allows modifying existing writable properties.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Object Destructuring & Freeze</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. Dynamic Keys & Object Destructuring
+const role = "admin";
+const user = {
+  id: 101,
+  username: "akshat_dev",
+  profile: {
+    roleName: role,
+    location: "India"
+  }
+};
+
+// Nested destructuring with aliasing & defaults
+const { username, profile: { roleName: userRole, location }, status = "active" } = user;
+console.log(`User: ${username} | Role: ${userRole} | Status: ${status}`);
+
+// 2. Object Immutability: Object.freeze vs Object.seal
+const immutableConfig = Object.freeze({ apiEndpoint: "https://api.domain.com", timeout: 5000 });
+// immutableConfig.timeout = 10000; // Silently ignored in non-strict mode, throws TypeError in strict mode!
+console.log("Config timeout remains:", immutableConfig.timeout);
+
+// 3. Object.entries loop
+const stats = { views: 15400, likes: 980, shares: 320 };
+console.log("=== Analytics Entries ===");
+for (const [metric, count] of Object.entries(stats)) {
+  console.log(`${metric.toUpperCase()}: ${count}`);
+}</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 10: Summary & Next Steps
+             ================================================================ -->
+        <article class="topic-card" id="mod-10">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 10</span>
+              <h2 class="topic-title">Course Outro & Roadmap Forward</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=28936s" target="_blank" class="timestamp-badge">
+                ▶ 08:02:16 Outro
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>Congratulations on Completing the Fundamentals!</h3>
+            <p>
+              You now have a rock-solid understanding of JavaScript foundations: V8 architecture, Call Stack, Memory Heap, Primitive vs Reference types, Variable Scope, Hoisting & TDZ, Operators, Control Flow, Loops, First-Class Functions, Array methods, and Objects.
+            </p>
+
+            <div class="callout callout-tip">
+              <span class="callout-icon">🚀</span>
+              <div class="callout-body">
+                <div class="callout-title">Next Step: Sheryians Part 2 (DOM & Asynchronous JS)</div>
+                After mastering the core language, proceed to:
+                1. <strong>DOM Manipulation & Event Listeners</strong> (selecting elements, event delegation, bubbling/capturing)<br/>
+                2. <strong>Asynchronous JavaScript</strong> (Event Loop, Callback Queue, Microtask Queue, Promises, async/await, Fetch API)<br/>
+                3. <strong>Web Storage API</strong> (localStorage, sessionStorage, Cookies).
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ==================================================================
+           VIEW 2: LIVE IDE & CODE PLAYGROUND
+           ================================================================== -->
+      <section id="view-ide" class="view-section">
+        <div class="course-hero" style="margin-bottom:1.5rem; padding:1.5rem;">
+          <h2 class="hero-title" style="font-size:1.6rem;">⚡ Interactive JavaScript Playground</h2>
+          <p class="hero-desc" style="font-size:0.95rem; margin-bottom:0.5rem;">
+            Write, test, and experiment with JavaScript code directly in your browser. Features real-time output capturing for <code>console.log</code>, <code>console.table</code>, <code>console.warn</code>, and <code>console.error</code>.
+          </p>
+        </div>
+
+        <div class="playground-container">
+          <!-- Editor Pane -->
+          <div class="editor-pane">
+            <div class="pane-header">
+              <span class="pane-title">📝 Code Editor</span>
+              <div class="editor-controls">
+                <select id="code-preset-select" class="code-preset-select" title="Load Preset Example">
+                  <option value="hoisting">Preset: Hoisting & TDZ</option>
+                  <option value="types_memory">Preset: Memory & References</option>
+                  <option value="coercion">Preset: Type Coercion Quirks</option>
+                  <option value="array_methods">Preset: Map / Filter / Reduce</option>
+                  <option value="functions_closures">Preset: HOFs & Closures</option>
+                </select>
+                <button id="btn-run-code" class="btn-execute">▶ Run Code</button>
+              </div>
+            </div>
+            <textarea id="ide-editor" class="ide-textarea" spellcheck="false" placeholder="// Type or paste your JavaScript code here..."></textarea>
+          </div>
+
+          <!-- Virtual Console Pane -->
+          <div class="console-pane">
+            <div class="pane-header">
+              <span class="pane-title">🖥️ Output Console</span>
+              <div class="editor-controls">
+                <button id="btn-clear-console" class="code-btn">🗑️ Clear</button>
+              </div>
+            </div>
+            <div id="console-output" class="console-output">
+              <div class="console-empty">Console ready. Click "Run Code" or press Ctrl+Enter to execute.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 3: INTERACTIVE QUIZ & ASSESSMENT
+           ================================================================== -->
+      <section id="view-quiz" class="view-section">
+        <div class="quiz-container">
+          <div class="course-hero" style="margin-bottom:1.5rem; padding:1.5rem;">
+            <h2 class="hero-title" style="font-size:1.6rem;">🎯 JavaScript Core Assessment</h2>
+            <p class="hero-desc" style="font-size:0.95rem; margin-bottom:0;">
+              Test your understanding of concepts taught in the Sheryians full course. Immediate feedback and in-depth explanations provided for every question!
+            </p>
+          </div>
+
+          <div id="quiz-active-view" class="quiz-card">
+            <div class="quiz-progress-bar">
+              <div id="quiz-progress-fill" class="quiz-progress-fill"></div>
+            </div>
+
+            <div class="quiz-meta">
+              <span id="quiz-counter">Question 1 of 10</span>
+              <span style="color:var(--accent-primary); font-weight:600;">Sheryians JS Quiz</span>
+            </div>
+
+            <h3 id="quiz-question-text" class="quiz-question-text"></h3>
+
+            <div id="quiz-code-box" class="quiz-code-block" style="display:none;"></div>
+
+            <div id="quiz-options-list" class="quiz-options"></div>
+
+            <div id="quiz-explanation-box" class="quiz-explanation"></div>
+
+            <div class="quiz-controls">
+              <div></div>
+              <button id="btn-quiz-next" class="btn-execute" disabled>Next Question →</button>
+            </div>
+          </div>
+
+          <div id="quiz-result-view" class="quiz-card quiz-summary-card" style="display:none;">
+            <div id="quiz-score-badge" class="quiz-score-badge">0/10</div>
+            <h3 style="font-size:1.8rem; margin-bottom:0.75rem;">Quiz Completed!</h3>
+            <p id="quiz-score-msg" style="color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem;"></p>
+            <button id="btn-quiz-restart" class="btn-execute" style="margin:0 auto;">🔄 Retake Quiz</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 4: 3D REVISION FLASHCARDS
+           ================================================================== -->
+      <section id="view-flashcards" class="view-section">
+        <div class="flashcards-container">
+          <div class="course-hero" style="margin-bottom:1.5rem; padding:1.5rem; text-align:center;">
+            <h2 class="hero-title" style="font-size:1.6rem;">🗂️ Rapid Concept Flashcards</h2>
+            <p class="hero-desc" style="font-size:0.95rem; margin:0 auto;">
+              Click the card to flip between Question and Answer. Perfect for active recall and interview revision.
+            </p>
+          </div>
+
+          <div id="flashcard-wrapper" class="flashcard-wrapper">
+            <!-- Front Face -->
+            <div class="flashcard-face flashcard-front">
+              <div class="card-top">
+                <span id="card-category" class="card-category">CATEGORY</span>
+                <span class="card-hint">💡 Click to Flip</span>
+              </div>
+              <div class="card-center">
+                <h3 id="card-question" class="card-question"></h3>
+              </div>
+              <div class="card-footer-tip">Active Recall Mode</div>
+            </div>
+
+            <!-- Back Face -->
+            <div class="flashcard-face flashcard-back">
+              <div class="card-top">
+                <span class="card-category" style="color:var(--accent-emerald);">ANSWER & EXPLANATION</span>
+                <span class="card-hint">💡 Click to Flip Back</span>
+              </div>
+              <div class="card-center">
+                <p id="card-answer" class="card-answer"></p>
+              </div>
+              <div class="card-footer-tip">Sheryians Core Knowledge</div>
+            </div>
+          </div>
+
+          <!-- Flashcard Controls -->
+          <div class="flashcard-controls">
+            <button id="btn-card-prev" class="code-btn" style="padding:0.6rem 1.2rem; font-size:0.9rem;">← Previous Card</button>
+            <span id="card-counter" style="color:var(--text-muted); font-size:0.9rem;">Card 1 of 10</span>
+            <button id="btn-card-next" class="btn-execute" style="padding:0.6rem 1.2rem; font-size:0.9rem;">Next Card →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 5: INTERVIEW Q&A ACCORDION
+           ================================================================== -->
+      <section id="view-interview" class="view-section">
+        <div class="course-hero" style="margin-bottom:2rem; padding:1.75rem;">
+          <h2 class="hero-title" style="font-size:1.75rem;">💡 Top Tricky JavaScript Interview Questions</h2>
+          <p class="hero-desc" style="font-size:1rem; margin-bottom:0;">
+            Curated tricky questions frequently asked in frontend interviews at top tech companies.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>1. What is the output of <code>[] + {}</code> versus <code>{} + []</code>?</span>
+              <span class="faq-badge">Type Coercion</span>
+            </button>
+            <div class="faq-content">
+              <p>• <strong><code>[] + {}</code></strong> evaluates to <strong><code>"[object Object]"</code></strong>. The <code>+</code> operator coerces <code>[]</code> to an empty string <code>""</code> via <code>[].toString()</code>, and <code>{}.toString()</code> produces <code>"[object Object]"</code>. Result: <code>"" + "[object Object]" = "[object Object]"</code>.</p>
+              <p>• <strong><code>{} + []</code></strong> in a standalone browser console line may evaluate to <strong><code>0</code></strong> because the leading <code>{}</code> is parsed as an empty code block, and <code>+[]</code> is treated as unary plus on an empty array, coercing it to <code>0</code>! (Inside an expression like <code>({} + [])</code> it evaluates to <code>"[object Object]"</code>).</p>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>2. Explain why <code>typeof NaN === 'number'</code> and how to properly check for NaN.</span>
+              <span class="faq-badge">Core Engine</span>
+            </button>
+            <div class="faq-content">
+              <p>In the IEEE 754 floating-point standard used by JavaScript, <code>NaN</code> (Not-a-Number) is a special numeric value representing an undefined or unrepresentable mathematical result (e.g. <code>0 / 0</code> or <code>parseInt("hello")</code>).</p>
+              <p>Because <code>NaN !== NaN</code> (it is never equal to itself), you should NEVER check with <code>val === NaN</code>. Always use <strong><code>Number.isNaN(val)</code></strong> (which checks if the value is strictly NaN without type coercion) rather than the global <code>isNaN()</code>.</p>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>3. Why does <code>0.1 + 0.2 !== 0.3</code> in JavaScript?</span>
+              <span class="faq-badge">Precision</span>
+            </button>
+            <div class="faq-content">
+              <p>JavaScript represents all numbers using 64-bit binary floating-point format (IEEE 754). Numbers like <code>0.1</code> and <code>0.2</code> have repeating infinite binary fractions and cannot be represented with exact precision in binary. <code>0.1 + 0.2</code> yields <code>0.30000000000000004</code>.</p>
+              <p><strong>Solution:</strong> Use <code>Number.EPSILON</code> or rounding: <code>Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON</code> (returns <code>true</code>).</p>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>4. What is the difference between Function Declaration and Function Expression?</span>
+              <span class="faq-badge">Functions</span>
+            </button>
+            <div class="faq-content">
+              <p>• <strong>Function Declarations:</strong> <code>function foo() {}</code> are hoisted entirely during the memory creation phase. You can safely call <code>foo()</code> anywhere in the scope, even before its definition line.</p>
+              <p>• <strong>Function Expressions:</strong> <code>const foo = function() {}</code> assign an anonymous function to a variable. The variable declaration is hoisted, but the function assignment occurs only at execution time. Calling <code>foo()</code> before that line throws a <code>ReferenceError</code> (if let/const) or <code>TypeError: foo is not a function</code> (if var).</p>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>5. What is the difference between <code>map()</code> and <code>forEach()</code>?</span>
+              <span class="faq-badge">Arrays</span>
+            </button>
+            <div class="faq-content">
+              <p>• <strong><code>map()</code>:</strong> Returns a <em>brand new array</em> containing the results of calling the provided function on every element. It does not mutate the original array and is chainable with <code>.filter()</code> or <code>.reduce()</code>.</p>
+              <p>• <strong><code>forEach()</code>:</strong> Executes a provided function once for each array element and always returns <code>undefined</code>. It is strictly used for side-effects (e.g. logging or mutating external state) and is not chainable.</p>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>6. How do Closures work in JavaScript and where are they used in real projects?</span>
+              <span class="faq-badge">Advanced</span>
+            </button>
+            <div class="faq-content">
+              <p>A <strong>Closure</strong> is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In simple terms: a function remembers the variables from the outer scope where it was created, even after that outer function has finished executing.</p>
+              <p><strong>Real-World Use Cases:</strong></p>
+              <ul>
+                <li>Creating private variables & data encapsulation (Module pattern).</li>
+                <li>Debouncing and Throttling functions for search inputs / scroll handlers.</li>
+                <li>Currying and Function Factories.</li>
+                <li>Maintaining state in asynchronous timer callbacks and event listeners.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 6: PRACTICE CHALLENGES
+           ================================================================== -->
+      <section id="view-challenges" class="view-section">
+        <div class="course-hero" style="margin-bottom:2rem; padding:1.75rem;">
+          <h2 class="hero-title" style="font-size:1.75rem;">💻 Hands-On Coding Challenges</h2>
+          <p class="hero-desc" style="font-size:1rem; margin-bottom:0;">
+            Strengthen your problem-solving muscle. Click "Solve in IDE" on any challenge to load the problem template and test your solution!
+          </p>
+        </div>
+
+        <div class="challenges-grid">
+          <!-- Challenge 1 -->
+          <div class="challenge-card">
+            <div>
+              <span class="challenge-badge easy">Easy</span>
+              <h3 class="challenge-title">1. Array Unique Values</h3>
+              <p class="challenge-desc">Write a function <code>getUnique(arr)</code> that takes an array with duplicates and returns an array with only unique values using both ES6 <code>Set</code> and <code>filter()</code>.</p>
+            </div>
+            <button class="code-btn btn-run btn-run-snippet" style="width:100%; justify-content:center; padding:0.6rem;">⚡ Solve in IDE</button>
+            <div class="code-card" style="display:none;">
+              <pre><code>// Challenge 1: Return Unique Elements
+function getUnique(arr) {
+  // Method 1: Using Set
+  const setUnique = [...new Set(arr)];
+  
+  // Method 2: Using filter & indexOf
+  const filterUnique = arr.filter((item, idx) => arr.indexOf(item) === idx);
+
+  return { setUnique, filterUnique };
+}
+
+const numbers = [1, 2, 2, 3, 4, 4, 5, 1, 6];
+console.log("Original:", numbers);
+console.log("Unique Result:", getUnique(numbers));</code></pre>
+            </div>
+          </div>
+
+          <!-- Challenge 2 -->
+          <div class="challenge-card">
+            <div>
+              <span class="challenge-badge medium">Medium</span>
+              <h3 class="challenge-title">2. Flatten a Nested Array</h3>
+              <p class="challenge-desc">Write a recursive function <code>flattenArray(arr)</code> without using the built-in <code>Array.prototype.flat()</code>.</p>
+            </div>
+            <button class="code-btn btn-run btn-run-snippet" style="width:100%; justify-content:center; padding:0.6rem;">⚡ Solve in IDE</button>
+            <div class="code-card" style="display:none;">
+              <pre><code>// Challenge 2: Deep Flatten Array using Recursion & Reduce
+function flattenArray(arr) {
+  return arr.reduce((acc, curr) => {
+    if (Array.isArray(curr)) {
+      return acc.concat(flattenArray(curr));
+    } else {
+      return acc.concat(curr);
+    }
+  }, []);
+}
+
+const nested = [1, [2, [3, [4, 5]], 6], 7];
+console.log("Flattened:", flattenArray(nested)); // [1, 2, 3, 4, 5, 6, 7]</code></pre>
+            </div>
+          </div>
+
+          <!-- Challenge 3 -->
+          <div class="challenge-card">
+            <div>
+              <span class="challenge-badge medium">Medium</span>
+              <h3 class="challenge-title">3. Word Frequency Counter</h3>
+              <p class="challenge-desc">Given a sentence string, return an object representing the frequency of each word using <code>reduce()</code>.</p>
+            </div>
+            <button class="code-btn btn-run btn-run-snippet" style="width:100%; justify-content:center; padding:0.6rem;">⚡ Solve in IDE</button>
+            <div class="code-card" style="display:none;">
+              <pre><code>// Challenge 3: Word Frequency Counter
+function countWordFrequency(str) {
+  const words = str.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/);
+  
+  return words.reduce((acc, word) => {
+    if (!word) return acc;
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+const text = "JavaScript is great, and JavaScript is versatile!";
+console.log("Frequency Result:", countWordFrequency(text));</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Floating Quick IDE Trigger -->
+  <button id="fab-playground" class="fab-playground" title="Open Live Code IDE">
+    <span>⚡</span> Quick IDE
+  </button>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
