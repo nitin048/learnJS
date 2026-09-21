@@ -1,14 +1,28 @@
 # 🚀 JavaScript Full Course — Complete Masterclass Study Guide & Interactive Portal
 
+<p align="center">
+  <strong>An all-in-one, offline-ready interactive study portal & playground packed with 10 comprehensive modules, live sandboxed IDE, 3D flashcards, quiz engine, tricky interview gotchas, and coding challenges based on Sheryians Coding School's 8-hour masterclass.</strong>
+</p>
+
+<p align="center">
+  <a href="https://nitin048.github.io/learnJS/javascript-masterclass-portal.html">
+    <img src="https://img.shields.io/badge/🌐_Live_Portal-Launch_Here-success?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Modules-10_Chapters-blue?style=for-the-badge&logo=book" alt="Modules" />
+  <img src="https://img.shields.io/badge/Live_IDE-Sandboxed-purple?style=for-the-badge&logo=visualstudiocode" alt="Live IDE" />
+  <img src="https://img.shields.io/badge/Format-Single--File_SPA-orange?style=for-the-badge" alt="Format" />
+  <img src="https://img.shields.io/badge/Dependencies-Zero-success?style=for-the-badge" alt="Zero Dependencies" />
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge" alt="License" />
+</p>
+
 > **Source Masterclass**: *JavaScript - Learn Everything (8-Hour Masterclass)* by **Sheryians Coding School**  
 > **YouTube Video**: [https://www.youtube.com/watch?v=a-wVHL0lpb0](https://www.youtube.com/watch?v=a-wVHL0lpb0)  
-> **Interactive Web App**: Open [`index.html`](./index.html) in your browser (Zero dependencies, 100% Vanilla JS & CSS).
-
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)](#)
-[![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white)](#)
-[![CSS3](https://img.shields.io/badge/CSS3-Modern_Variables_%26_3D_Transforms-1572B6?logo=css3&logoColor=white)](#)
-[![Dependencies](https://img.shields.io/badge/Dependencies-Zero-success)](#)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](#)
+> **Live GitHub Pages Portal**: [https://nitin048.github.io/learnJS/javascript-masterclass-portal.html](https://nitin048.github.io/learnJS/javascript-masterclass-portal.html)  
+> **Offline Standalone File**: [`javascript-masterclass-portal.html`](./javascript-masterclass-portal.html) (Zero dependencies, single-file SPA).
 
 ---
 
@@ -361,10 +375,11 @@ function countWordFrequency(str) {
 
 ```
 learnJS/
-├── index.html        # Single-page application markup & all views (Notes, IDE, Quiz, Cards, FAQ, Challenges)
-├── styles.css        # Modern design system (Dark theme, glassmorphism, 3D CSS transforms, responsive layout)
-├── app.js            # Sandboxed IDE runner, virtual console interceptor, quiz engine, 3D flashcards, search
-└── README.md         # Comprehensive masterclass study documentation & reference guide
+├── javascript-masterclass-portal.html # Standalone single-file SPA bundle (zero dependencies, offline ready)
+├── index.html                        # Root redirector for GitHub Pages (routes to javascript-masterclass-portal.html)
+├── styles.css                        # Modern design system (Dark theme, glassmorphism, 3D CSS transforms)
+├── app.js                            # Sandboxed IDE runner, console interceptor, quiz engine, 3D flashcards
+└── README.md                         # Comprehensive masterclass study documentation & reference guide
 ```
 
 ---

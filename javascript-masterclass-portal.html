@@ -1,0 +1,3605 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Masterclass - Complete Interactive Study Guide | Sheryians Coding School</title>
+  <meta name="description" content="Interactive study guide, live code runner, and comprehensive notes for JavaScript Full Course (Sheryians Coding School)." />
+  <style>
+/* ==========================================================================
+   JavaScript Masterclass Study Portal - Stylesheet
+   Based on Sheryians Coding School "JavaScript - Learn Everything"
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+  --bg-base: #090d16;
+  --bg-surface: #0f172a;
+  --bg-surface-elevated: #1e293b;
+  --bg-surface-glass: rgba(15, 23, 42, 0.85);
+  --bg-card: #151f33;
+  --bg-card-hover: #1c2a44;
+  --bg-code: #0b1120;
+  
+  --border-subtle: #1e293b;
+  --border-light: #334155;
+  --border-focus: #38bdf8;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --accent-primary: #f59e0b; /* Sheryians Gold */
+  --accent-primary-hover: #fbbf24;
+  --accent-primary-dim: rgba(245, 158, 11, 0.15);
+  --accent-cyan: #06b6d4;
+  --accent-cyan-dim: rgba(6, 182, 212, 0.15);
+  --accent-emerald: #10b981;
+  --accent-emerald-dim: rgba(16, 185, 129, 0.15);
+  --accent-rose: #f43f5e;
+  --accent-rose-dim: rgba(244, 63, 94, 0.15);
+  --accent-violet: #8b5cf6;
+  --accent-violet-dim: rgba(139, 92, 246, 0.15);
+  
+  --font-heading: 'Outfit', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(245, 158, 11, 0.25);
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-base: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-glass: rgba(255, 255, 255, 0.9);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-code: #1e293b;
+  
+  --border-subtle: #e2e8f0;
+  --border-light: #cbd5e1;
+  --border-focus: #0284c7;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+
+  --accent-primary: #d97706;
+  --accent-primary-hover: #b45309;
+  --accent-primary-dim: rgba(217, 119, 6, 0.12);
+  --accent-cyan: #0284c7;
+  --accent-emerald: #059669;
+  --accent-rose: #e11d48;
+  --accent-violet: #7c3aed;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(217, 119, 6, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-surface-glass);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-badge {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: #000;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-box {
+  position: relative;
+  width: 240px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.45rem 0.8rem 0.45rem 2rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.search-box input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary-dim);
+  width: 280px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.progress-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-surface-elevated);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar-mini {
+  width: 70px;
+  height: 6px;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill-mini {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-primary));
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.nav-tabs {
+  display: flex;
+  background-color: var(--bg-surface-elevated);
+  border-radius: var(--radius-md);
+  padding: 0.2rem;
+  gap: 0.2rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  background-color: var(--accent-primary);
+  color: #090d16;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.icon-btn {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.icon-btn:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Main App Layout
+   ========================================================================== */
+.app-container {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  min-height: calc(100vh - 65px);
+}
+
+/* Sidebar */
+.app-sidebar {
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-light);
+  height: calc(100vh - 65px);
+  position: sticky;
+  top: 65px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.25rem 1rem 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module-nav-list {
+  list-style: none;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.module-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.module-nav-item:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.module-nav-item.active {
+  background-color: var(--accent-primary-dim);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.module-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--text-dim);
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.module-checkbox:checked {
+  background-color: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+}
+
+.module-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.module-nav-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.module-timestamp {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  background-color: var(--bg-base);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.yt-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #ff000022;
+  color: #ff4e4e;
+  border: 1px solid #ff000044;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.yt-link-btn:hover {
+  background-color: #ff000033;
+  border-color: #ff4e4e;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Main Content Area */
+.app-content {
+  padding: 2rem 2.5rem 5rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.view-section {
+  display: none;
+}
+
+.view-section.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Hero & Module Headers
+   ========================================================================== */
+.course-hero {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(6, 182, 212, 0.08), rgba(15, 23, 42, 0.9));
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.course-hero::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25), transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--accent-primary-dim);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-full);
+  color: var(--accent-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(to right, #ffffff, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.stat-item strong {
+  color: var(--text-primary);
+}
+
+/* Topic Card / Module Container */
+.topic-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.topic-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 1rem;
+}
+
+.topic-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.topic-tag {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topic-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.topic-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.timestamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  background-color: #ff000018;
+  border: 1px solid #ff000044;
+  border-radius: var(--radius-full);
+  color: #ff5252;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.timestamp-badge:hover {
+  background-color: #ff000033;
+  color: #fff;
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   Typography & Content Blocks
+   ========================================================================== */
+.topic-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 1.8rem 0 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topic-content h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background-color: var(--accent-primary);
+  border-radius: 2px;
+}
+
+.topic-content h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 1.2rem 0 0.5rem;
+}
+
+.topic-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.96rem;
+}
+
+.topic-content ul, .topic-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.topic-content li {
+  margin-bottom: 0.45rem;
+}
+
+.topic-content strong {
+  color: var(--text-primary);
+}
+
+/* Callout Boxes */
+.callout {
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  border-left: 4px solid;
+}
+
+.callout-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.callout-body {
+  flex: 1;
+}
+
+.callout-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.callout-info {
+  background-color: var(--accent-cyan-dim);
+  border-color: var(--accent-cyan);
+  color: #e0f2fe;
+}
+.callout-info .callout-title { color: #38bdf8; }
+
+.callout-sheryians {
+  background-color: var(--accent-primary-dim);
+  border-color: var(--accent-primary);
+  color: #fef3c7;
+}
+.callout-sheryians .callout-title { color: #fbbf24; }
+
+.callout-warning {
+  background-color: var(--accent-rose-dim);
+  border-color: var(--accent-rose);
+  color: #ffe4e6;
+}
+.callout-warning .callout-title { color: #fb7185; }
+
+.callout-tip {
+  background-color: var(--accent-emerald-dim);
+  border-color: var(--accent-emerald);
+  color: #d1fae5;
+}
+.callout-tip .callout-title { color: #34d399; }
+
+/* Memory / Concept Diagrams */
+.diagram-card {
+  background-color: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.diagram-header {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.diagram-box {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.diagram-box.primary { border-top: 3px solid var(--accent-primary); }
+.diagram-box.cyan { border-top: 3px solid var(--accent-cyan); }
+.diagram-box.emerald { border-top: 3px solid var(--accent-emerald); }
+.diagram-box.rose { border-top: 3px solid var(--accent-rose); }
+
+.diagram-box-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.diagram-box-body {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  line-height: 1.4;
+}
+
+/* Comparison Tables */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: var(--bg-surface-elevated);
+  padding: 0.85rem 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.custom-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  background-color: var(--bg-surface);
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table code {
+  background-color: var(--bg-base);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  color: var(--accent-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Code Blocks & Interactive Snippet Bar
+   ========================================================================== */
+.code-card {
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin: 1.25rem 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.code-card-header {
+  background-color: rgba(15, 23, 42, 0.9);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.code-lang-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.code-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.code-btn {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.code-btn:hover {
+  background-color: var(--accent-primary-dim);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.code-btn.btn-run {
+  background-color: var(--accent-emerald-dim);
+  color: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+.code-btn.btn-run:hover {
+  background-color: var(--accent-emerald);
+  color: #000;
+}
+
+.code-card pre {
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+/* Syntax Highlighting Mini-Classes */
+.hl-kw { color: #f43f5e; font-weight: 600; }     /* Keywords */
+.hl-fn { color: #38bdf8; }                      /* Functions */
+.hl-str { color: #34d399; }                     /* Strings */
+.hl-num { color: #fbbf24; }                     /* Numbers */
+.hl-bool { color: #c084fc; font-weight: 600; }  /* Booleans */
+.hl-cm { color: #64748b; font-style: italic; }  /* Comments */
+.hl-op { color: #f472b6; }                      /* Operators */
+.hl-var { color: #e2e8f0; }                     /* Variables */
+
+/* ==========================================================================
+   Live IDE / Code Playground View
+   ========================================================================== */
+.playground-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  min-height: 560px;
+  margin-top: 1rem;
+}
+
+.editor-pane, .console-pane {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.pane-header {
+  background-color: var(--bg-surface-elevated);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pane-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+}
+
+.editor-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.code-preset-select {
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.ide-textarea {
+  flex: 1;
+  width: 100%;
+  background-color: var(--bg-code);
+  color: #f1f5f9;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding: 1.25rem;
+  border: none;
+  resize: none;
+  outline: none;
+  tab-size: 2;
+  white-space: pre;
+}
+
+.console-output {
+  flex: 1;
+  padding: 1rem;
+  background-color: #060911;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.console-msg {
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid transparent;
+  word-break: break-all;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.console-msg.log {
+  color: #e2e8f0;
+  border-left-color: var(--text-dim);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.console-msg.error {
+  color: #fca5a5;
+  border-left-color: var(--accent-rose);
+  background-color: rgba(244, 63, 94, 0.1);
+}
+
+.console-msg.warn {
+  color: #fde047;
+  border-left-color: var(--accent-primary);
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+.console-msg.info {
+  color: #7dd3fc;
+  border-left-color: var(--accent-cyan);
+  background-color: rgba(6, 182, 212, 0.1);
+}
+
+.console-msg.table {
+  color: #e2e8f0;
+  border-left-color: var(--accent-emerald);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.console-empty {
+  color: var(--text-dim);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn-execute {
+  background: linear-gradient(135deg, var(--accent-primary), #ea580c);
+  color: #000;
+  border: none;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.btn-execute:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+/* ==========================================================================
+   Interactive Quiz View
+   ========================================================================== */
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-progress-bar {
+  height: 8px;
+  background-color: var(--bg-surface-elevated);
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-primary));
+  width: 10%;
+  transition: width 0.3s ease;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-question-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.quiz-code-block {
+  background-color: var(--bg-code);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-opt-btn {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.2rem;
+  color: var(--text-primary);
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.quiz-opt-btn:hover:not(:disabled) {
+  background-color: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.quiz-opt-btn.correct {
+  background-color: var(--accent-emerald-dim);
+  border-color: var(--accent-emerald);
+  color: #34d399;
+}
+
+.quiz-opt-btn.incorrect {
+  background-color: var(--accent-rose-dim);
+  border-color: var(--accent-rose);
+  color: #fb7185;
+}
+
+.quiz-opt-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  background-color: var(--bg-surface);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.quiz-explanation {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.quiz-explanation.show {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.quiz-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-summary-card {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.quiz-score-badge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-rose));
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+}
+
+/* ==========================================================================
+   Flashcards View (3D Flip)
+   ========================================================================== */
+.flashcards-container {
+  max-width: 720px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.flashcard-wrapper {
+  width: 100%;
+  min-height: 380px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.flashcard-wrapper.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+
+.flashcard-front {
+  background: linear-gradient(145deg, #162035, #0f172a);
+}
+
+.flashcard-back {
+  background: linear-gradient(145deg, #1e293b, #111c30);
+  transform: rotateY(180deg);
+  border-color: var(--accent-primary);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.card-center {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.card-question {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.card-answer {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.card-footer-tip {
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  text-align: center;
+}
+
+.flashcard-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Interview Q&A Accordion
+   ========================================================================== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.faq-item:hover {
+  border-color: var(--accent-primary);
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: 1.25rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  gap: 1rem;
+}
+
+.faq-badge {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface-elevated);
+  color: var(--accent-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.faq-content {
+  padding: 0 1.25rem 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: none;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+}
+
+.faq-item.open .faq-content {
+  display: block;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Practice Challenges Section
+   ========================================================================== */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.challenge-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.challenge-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.challenge-badge.easy { background-color: var(--accent-emerald-dim); color: #34d399; }
+.challenge-badge.medium { background-color: var(--accent-primary-dim); color: #fbbf24; }
+.challenge-badge.hard { background-color: var(--accent-rose-dim); color: #fb7185; }
+
+.challenge-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: var(--text-primary);
+}
+
+.challenge-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Floating Action Button (Quick Playground Trigger) */
+.fab-playground {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, var(--accent-primary), #ea580c);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.85rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+  z-index: 90;
+  transition: all var(--transition-fast);
+}
+
+.fab-playground:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-emerald);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideUpToast 0.3s ease;
+}
+
+@keyframes slideUpToast {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+  .app-sidebar {
+    display: none;
+  }
+  .app-sidebar.mobile-open {
+    display: flex;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 280px;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+  .playground-container {
+    grid-template-columns: 1fr;
+  }
+  .app-content {
+    padding: 1.5rem 1rem;
+  }
+  .search-box {
+    display: none;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Sticky App Header
+       ======================================================================== -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="brand-badge">JS</div>
+      <div>
+        <h1 class="brand-title">JavaScript Masterclass Notes</h1>
+        <span class="brand-subtitle">Sheryians Coding School • "Learn Everything" Course Guide</span>
+      </div>
+    </div>
+
+    <!-- Center Navigation Tabs -->
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <button class="tab-btn active" data-view="notes">📖 Study Notes</button>
+      <button class="tab-btn" data-view="ide">⚡ Live IDE & Playground</button>
+      <button class="tab-btn" data-view="quiz">🎯 Quiz & Assessment</button>
+      <button class="tab-btn" data-view="flashcards">🗂️ Flashcards</button>
+      <button class="tab-btn" data-view="interview">💡 Tricky Interview Q&A</button>
+      <button class="tab-btn" data-view="challenges">💻 Practice Challenges</button>
+    </nav>
+
+    <!-- Header Controls -->
+    <div class="header-controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="global-search" placeholder="Search concepts, methods, topics..." />
+      </div>
+
+      <div class="progress-widget" title="Course Completion Progress">
+        <div class="progress-bar-mini">
+          <div class="progress-fill-mini" id="progress-fill-mini"></div>
+        </div>
+        <span id="progress-text">0% Completed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Main App Container (Sidebar + Content)
+       ======================================================================== -->
+  <div class="app-container">
+    
+    <!-- Sidebar Curriculum Navigation -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+          <span>Course Modules</span>
+          <span style="font-size:0.75rem; color:var(--accent-primary);">10 Modules</span>
+        </div>
+      </div>
+
+      <ul class="module-nav-list">
+        <li>
+          <a href="#mod-1" class="module-nav-item active">
+            <input type="checkbox" class="module-checkbox" data-module="mod-1" title="Mark complete" />
+            <span class="module-nav-text">1. JS Architecture & Engine</span>
+            <span class="module-timestamp">00:00</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-2" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-2" title="Mark complete" />
+            <span class="module-nav-text">2. Variables, Scope & Hoisting</span>
+            <span class="module-timestamp">10:20</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-3" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-3" title="Mark complete" />
+            <span class="module-nav-text">3. Data Types & Type System</span>
+            <span class="module-timestamp">01:06:48</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-4" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-4" title="Mark complete" />
+            <span class="module-nav-text">4. Operators & Expressions</span>
+            <span class="module-timestamp">02:03:57</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-5" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-5" title="Mark complete" />
+            <span class="module-nav-text">5. Control Flow & Branching</span>
+            <span class="module-timestamp">02:51:12</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-6" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-6" title="Mark complete" />
+            <span class="module-nav-text">6. Loops & Iterations</span>
+            <span class="module-timestamp">03:20:40</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-7" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-7" title="Mark complete" />
+            <span class="module-nav-text">7. Functions Deep Dive</span>
+            <span class="module-timestamp">04:39:18</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-8" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-8" title="Mark complete" />
+            <span class="module-nav-text">8. Arrays & Modern Methods</span>
+            <span class="module-timestamp">06:17:14</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-9" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-9" title="Mark complete" />
+            <span class="module-nav-text">9. Objects & References</span>
+            <span class="module-timestamp">07:16:36</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mod-10" class="module-nav-item">
+            <input type="checkbox" class="module-checkbox" data-module="mod-10" title="Mark complete" />
+            <span class="module-nav-text">10. Summary & Next Steps</span>
+            <span class="module-timestamp">08:02:16</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0" target="_blank" rel="noopener noreferrer" class="yt-link-btn">
+          <span>▶</span> Watch Video on YouTube
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Stream -->
+    <main class="app-content">
+
+      <!-- ==================================================================
+           VIEW 1: STUDY NOTES (Default View)
+           ================================================================== -->
+      <section id="view-notes" class="view-section active">
+        
+        <!-- Hero Banner -->
+        <div class="course-hero">
+          <div class="hero-pill">⚡ Master JavaScript Core</div>
+          <h2 class="hero-title">JavaScript: Learn Everything Masterclass</h2>
+          <p class="hero-desc">
+            Complete study companion for the legendary 8-hour masterclass by <strong>Sheryians Coding School</strong>.
+            Packed with visual memory models, deep runtime mechanics, copyable and runnable code snippets, and interview gotchas.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">⏱️ Duration: <strong>8h 03m</strong></div>
+            <div class="stat-item">🎯 Modules: <strong>10 Comprehensive Chapters</strong></div>
+            <div class="stat-item">⚡ Live IDE: <strong>Included</strong></div>
+            <div class="stat-item">💡 Quizzes & Challenges: <strong>30+ Interactive Tasks</strong></div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             MODULE 1: JS Architecture & Engine
+             ================================================================ -->
+        <article class="topic-card" id="mod-1">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 01</span>
+              <h2 class="topic-title">JavaScript Architecture & Engine Foundations</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=0s" target="_blank" class="timestamp-badge">
+                ▶ 00:00 Intro & Setup
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. What is JavaScript?</h3>
+            <p>
+              JavaScript is a <strong>high-level, single-threaded, garbage-collected, interpreted (or JIT-compiled), dynamic language with a non-blocking event loop</strong>.
+              It conforms to the <strong>ECMAScript (ES)</strong> specification.
+            </p>
+
+            <div class="callout callout-sheryians">
+              <span class="callout-icon">💡</span>
+              <div class="callout-body">
+                <div class="callout-title">Sheryians Key Insight</div>
+                JavaScript does not directly understand human English code. The browser uses a JavaScript Engine (like Google Chrome's <strong>V8</strong>, Firefox's <strong>SpiderMonkey</strong>, or Safari's <strong>JavaScriptCore</strong>) to convert source code into machine-executable binary bytecode.
+              </div>
+            </div>
+
+            <h3>2. How the V8 Engine Runs Code</h3>
+            <div class="diagram-card">
+              <div class="diagram-header">⚙️ V8 Pipeline Under the Hood</div>
+              <div class="diagram-grid">
+                <div class="diagram-box primary">
+                  <div class="diagram-box-title">1. Parser & AST</div>
+                  <div class="diagram-box-body">Code is tokenized into lexical units and transformed into an <strong>Abstract Syntax Tree (AST)</strong>.</div>
+                </div>
+                <div class="diagram-box cyan">
+                  <div class="diagram-box-title">2. Ignition Interpreter</div>
+                  <div class="diagram-box-body">Converts the AST into unoptimized bytecode for instantaneous startup execution.</div>
+                </div>
+                <div class="diagram-box emerald">
+                  <div class="diagram-box-title">3. TurboFan JIT Compiler</div>
+                  <div class="diagram-box-body">Monitors "hot functions" (frequently called code) and compiles them into highly optimized machine code.</div>
+                </div>
+              </div>
+            </div>
+
+            <h3>3. Execution Context & The Call Stack</h3>
+            <p>
+              Everything in JavaScript happens inside an <strong>Execution Context</strong>. When JS code runs, the Global Execution Context (GEC) is created with two distinct phases:
+            </p>
+            <ol>
+              <li><strong>Memory Creation Phase (Variable Environment):</strong> Memory is allocated for variables and functions. `var` is initialized to `undefined`, functions are copied completely.</li>
+              <li><strong>Code Execution Phase (Thread of Execution):</strong> Code is executed line by line synchronously from top to bottom.</li>
+            </ol>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ JavaScript Execution Flow</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// Execution Context & Call Stack Demo
+function first() {
+  console.log("Entering first()");
+  second();
+  console.log("Exiting first()");
+}
+
+function second() {
+  console.log("Inside second()");
+}
+
+console.log("Global Execution Started");
+first();
+console.log("Global Execution Finished");</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 2: Variables, Scope & Hoisting
+             ================================================================ -->
+        <article class="topic-card" id="mod-2">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 02</span>
+              <h2 class="topic-title">Variables, Declarations & Hoisting</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=620s" target="_blank" class="timestamp-badge">
+                ▶ 10:20 Variables & Hoisting
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. `var` vs `let` vs `const`</h3>
+            <p>
+              In modern JavaScript (ES6+), variable declarations differ drastically by scope, hoisting behavior, and re-assignment capabilities.
+            </p>
+
+            <div class="table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th><code>var</code> (ES5)</th>
+                    <th><code>let</code> (ES6)</th>
+                    <th><code>const</code> (ES6)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Scope</strong></td>
+                    <td>Function / Global</td>
+                    <td>Block Scoped <code>{ }</code></td>
+                    <td>Block Scoped <code>{ }</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hoisting</strong></td>
+                    <td>Hoisted & initialized as <code>undefined</code></td>
+                    <td>Hoisted into TDZ (Temporal Dead Zone)</td>
+                    <td>Hoisted into TDZ (Temporal Dead Zone)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Re-declaration</strong></td>
+                    <td>✅ Allowed in same scope</td>
+                    <td>❌ SyntaxError</td>
+                    <td>❌ SyntaxError</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Re-assignment</strong></td>
+                    <td>✅ Allowed</td>
+                    <td>✅ Allowed</td>
+                    <td>❌ TypeError (Constant)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Initial Value Required?</strong></td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>✅ Yes (Must initialize at declaration)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>2. Hoisting & The Temporal Dead Zone (TDZ)</h3>
+            <p>
+              <strong>Hoisting</strong> is JavaScript's default behavior of moving declarations to the top of the current scope during the Memory Creation phase.
+            </p>
+            <div class="callout callout-warning">
+              <span class="callout-icon">⚠️</span>
+              <div class="callout-body">
+                <div class="callout-title">The TDZ Trap</div>
+                <code>let</code> and <code>const</code> ARE hoisted, but they cannot be accessed until their declaration line is executed. The region between entering the scope and the declaration is called the <strong>Temporal Dead Zone (TDZ)</strong>. Accessing them inside TDZ throws a <code>ReferenceError: Cannot access 'x' before initialization</code>.
+              </div>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Hoisting & Scope Code Demo</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. var Hoisting Demo
+console.log("hoistedVar:", hoistedVar); // logs 'undefined'
+var hoistedVar = "Declared with var";
+
+// 2. Block Scope Isolation
+{
+  var globalPollution = "I leak outside!";
+  let blockSafe = "I stay inside!";
+  const constSafe = 42;
+}
+console.log(globalPollution); // Accessible!
+// console.log(blockSafe);   // ReferenceError: blockSafe is not defined
+
+// 3. Temporal Dead Zone Demonstration
+try {
+  console.log(tdzVar); // ReferenceError
+  let tdzVar = "Hello TDZ";
+} catch (err) {
+  console.error("TDZ Caught:", err.message);
+}</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 3: Data Types & Type System (Timestamp 5815s)
+             ================================================================ -->
+        <article class="topic-card" id="mod-3">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 03</span>
+              <h2 class="topic-title">Data Types & The JavaScript Type System</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=4008s" target="_blank" class="timestamp-badge">
+                ▶ 01:06:48 (5815s Topic Zone)
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Primitive vs Reference Types</h3>
+            <p>
+              JavaScript divides all values into two categories based on how they are stored and managed in memory:
+            </p>
+
+            <div class="diagram-card">
+              <div class="diagram-header">🧠 Memory Allocation Architecture</div>
+              <div class="diagram-grid">
+                <div class="diagram-box cyan">
+                  <div class="diagram-box-title">Primitive Types (Stack)</div>
+                  <div class="diagram-box-body">
+                    • <code>Number</code>, <code>String</code>, <code>Boolean</code>, <code>Undefined</code>, <code>Null</code>, <code>Symbol</code>, <code>BigInt</code><br/>
+                    • Stored directly in the <strong>Stack Memory</strong><br/>
+                    • <strong>Immutable</strong> & passed <strong>by value</strong> (copies actual value).
+                  </div>
+                </div>
+                <div class="diagram-box primary">
+                  <div class="diagram-box-title">Reference Types (Heap)</div>
+                  <div class="diagram-box-body">
+                    • <code>Object</code>, <code>Array</code>, <code>Function</code>, <code>Date</code>, <code>Map</code>, <code>Set</code><br/>
+                    • Stored in the dynamic <strong>Memory Heap</strong><br/>
+                    • The Stack only stores a <strong>Pointer / Reference Address</strong> to the Heap!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout callout-sheryians">
+              <span class="callout-icon">💡</span>
+              <div class="callout-body">
+                <div class="callout-title">Sheryians Golden Rule of References</div>
+                When you assign an object/array to another variable (e.g. <code>let b = a</code>), you are NOT making a copy of the data. Both variables point to the <strong>exact same memory address in the Heap</strong>. Modifying one mutates the other!
+              </div>
+            </div>
+
+            <h3>2. Type Coercion: Implicit vs Explicit</h3>
+            <p>
+              Type coercion is the automatic or manual conversion of values from one data type to another.
+            </p>
+            <ul>
+              <li><strong>String Coercion:</strong> Whenever <code>+</code> is used with any string operand, JS converts all operands to strings and concatenates (e.g. <code>"5" + 2 === "52"</code>).</li>
+              <li><strong>Numeric Coercion:</strong> Operators like <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> convert operands into numbers (e.g. <code>"5" - 2 === 3</code>).</li>
+              <li><strong>Boolean Coercion:</strong> Values converted inside <code>if()</code> or with <code>Boolean()</code> / <code>!!</code>.</li>
+            </ul>
+
+            <h3>3. The 8 Falsy Values in JavaScript</h3>
+            <div class="callout callout-warning">
+              <span class="callout-icon">⚠️</span>
+              <div class="callout-body">
+                <div class="callout-title">Must Memorize Falsy List</div>
+                There are only 8 falsy values in JavaScript:
+                <code>false</code>, <code>0</code>, <code>-0</code>, <code>0n</code> (BigInt zero), <code>""</code> (empty string), <code>null</code>, <code>undefined</code>, and <code>NaN</code>.<br/>
+                <strong>EVERYTHING ELSE IS TRUTHY</strong> (including <code>[]</code>, <code>{}</code>, <code>"0"</code>, <code>"false"</code>, and negative numbers like <code>-1</code>).
+              </div>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Type Quirks & Deep Cloning</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. Primitive Copy vs Reference Mutation
+let primitiveA = 50;
+let primitiveB = primitiveA;
+primitiveB = 100;
+console.log("primitiveA:", primitiveA); // 50 (Unchanged!)
+
+let refArr1 = ["Sheryians", "Coder"];
+let refArr2 = refArr1; // Shared pointer!
+refArr2.push("JavaScript Pro");
+console.log("refArr1 length:", refArr1.length); // 3 (Mutated!)
+
+// 2. Safe Deep Cloning with modern structuredClone()
+let original = { name: "Harsh", details: { city: "Bhopal" } };
+let deepCloned = structuredClone(original);
+deepCloned.details.city = "Bangalore";
+console.log("original city:", original.details.city); // "Bhopal" (Safe!)
+
+// 3. Type Coercion Edge Cases
+console.log("[] == false:", [] == false); // true!
+console.log("[] == ![]:", [] == ![]);     // true! (Coerced to 0 == 0)
+console.log("typeof null:", typeof null); // "object" (Historical bug)
+console.log("typeof NaN:", typeof NaN);   // "number"</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 4: Operators & Expressions
+             ================================================================ -->
+        <article class="topic-card" id="mod-4">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 04</span>
+              <h2 class="topic-title">Operators & Expressions</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=7437s" target="_blank" class="timestamp-badge">
+                ▶ 02:03:57 Operators
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Comparison: Strict (`===`) vs Loose (`==`)</h3>
+            <p>
+              Always default to <strong>strict equality (<code>===</code>)</strong> in production code:
+            </p>
+            <ul>
+              <li><code>==</code> (Abstract Equality): Coerces operand types if they differ before comparison (e.g. <code>5 == "5"</code> is <code>true</code>).</li>
+              <li><code>===</code> (Strict Equality): Compares both value AND data type without any coercion (e.g. <code>5 === "5"</code> is <code>false</code>).</li>
+            </ul>
+
+            <h3>2. Logical Short-Circuiting (`&&`, `||`, `??`)</h3>
+            <p>
+              Logical operators in JavaScript don't just return booleans; they return the <strong>actual operand value</strong>:
+            </p>
+            <ul>
+              <li><code>A && B</code> (AND): Returns <code>A</code> if <code>A</code> is falsy; otherwise returns <code>B</code>.</li>
+              <li><code>A || B</code> (OR): Returns <code>A</code> if <code>A</code> is truthy; otherwise returns <code>B</code>.</li>
+              <li><code>A ?? B</code> (Nullish Coalescing): Returns <code>B</code> <strong>ONLY if <code>A</code> is <code>null</code> or <code>undefined</code></strong>. If <code>A</code> is <code>0</code>, <code>""</code>, or <code>false</code>, it returns <code>A</code>.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Short-Circuit & Nullish Coalescing</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// Difference between || and ??
+let userScore = 0; // 0 is a valid score!
+
+let display1 = userScore || 100;
+console.log("Using || fallback:", display1); // 100 (Bug! Overrode 0)
+
+let display2 = userScore ?? 100;
+console.log("Using ?? fallback:", display2); // 0 (Correct! 0 preserved)
+
+// Short-circuiting execution
+let isLoggedIn = true;
+isLoggedIn && console.log("User is authenticated, welcome back!");
+
+// Ternary Operator
+let age = 19;
+let status = age >= 18 ? "Eligible to vote" : "Underage";
+console.log("Status:", status);</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 5: Control Flow
+             ================================================================ -->
+        <article class="topic-card" id="mod-5">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 05</span>
+              <h2 class="topic-title">Control Flow & Branching</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=10272s" target="_blank" class="timestamp-badge">
+                ▶ 02:51:12 Control Flow
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Conditionals (`if`, `else if`, `else`)</h3>
+            <p>
+              Execute different blocks of code based on truthy/falsy evaluation.
+            </p>
+
+            <h3>2. The Clean Code Pattern: Guard Clauses / Early Return</h3>
+            <p>
+              Instead of deeply nesting multiple <code>if-else</code> ladders, modern JavaScript developers use <strong>Guard Clauses</strong> to exit early.
+            </p>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Guard Clauses vs Nested Ifs</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// ❌ Bad: Deeply Nested
+function processPaymentBad(user, amount) {
+  if (user) {
+    if (user.isActive) {
+      if (user.balance >= amount) {
+        user.balance -= amount;
+        return "Success";
+      } else {
+        return "Insufficient Balance";
+      }
+    } else {
+      return "User Inactive";
+    }
+  } else {
+    return "No User";
+  }
+}
+
+// ✅ Good: Guard Clauses (Clean, Flat, Scalable)
+function processPaymentClean(user, amount) {
+  if (!user) return "No User";
+  if (!user.isActive) return "User Inactive";
+  if (user.balance < amount) return "Insufficient Balance";
+
+  user.balance -= amount;
+  return `Success! New Balance: ${user.balance}`;
+}
+
+const client = { isActive: true, balance: 500 };
+console.log(processPaymentClean(client, 150));</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 6: Loops & Iterations
+             ================================================================ -->
+        <article class="topic-card" id="mod-6">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 06</span>
+              <h2 class="topic-title">Loops & Iterations</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=12040s" target="_blank" class="timestamp-badge">
+                ▶ 03:20:40 Loops
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. The Core Loop Types</h3>
+            <ul>
+              <li><strong><code>for</code> loop:</strong> Known number of iterations with counter initialization, condition, and increment/decrement.</li>
+              <li><strong><code>while</code> loop:</strong> Entry-controlled loop; checks condition before running the body.</li>
+              <li><strong><code>do...while</code> loop:</strong> Exit-controlled loop; guaranteed to execute at least ONCE even if condition is false.</li>
+              <li><strong><code>for...of</code>:</strong> Iterates directly over values of iterables (Arrays, Strings, Sets, Maps).</li>
+              <li><strong><code>for...in</code>:</strong> Iterates over enumerable property keys of an Object (or indices of an Array).</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Loops & Break/Continue</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. for...of vs for...in
+const fruits = ["Apple", "Banana", "Cherry"];
+
+console.log("=== for...of (Values) ===");
+for (const fruit of fruits) {
+  console.log("Fruit:", fruit);
+}
+
+console.log("\n=== for...in (Indices / Keys) ===");
+for (const index in fruits) {
+  console.log(`Index ${index} => ${fruits[index]}`);
+}
+
+// 2. Control Statements: break and continue
+console.log("\n=== break & continue Demo ===");
+for (let i = 1; i <= 6; i++) {
+  if (i === 3) {
+    console.log(`Skipping iteration ${i} with continue`);
+    continue;
+  }
+  if (i === 5) {
+    console.log(`Breaking loop at ${i}`);
+    break;
+  }
+  console.log("Step:", i);
+}</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 7: Functions Deep Dive
+             ================================================================ -->
+        <article class="topic-card" id="mod-7">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 07</span>
+              <h2 class="topic-title">Functions Deep Dive & First-Class Citizens</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=16758s" target="_blank" class="timestamp-badge">
+                ▶ 04:39:18 Functions
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Function Declarations vs Expressions vs Arrow Functions</h3>
+            <p>
+              In JavaScript, functions are <strong>First-Class Citizens</strong>: they can be assigned to variables, passed as arguments to other functions, and returned from functions.
+            </p>
+
+            <div class="table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Function Declaration</th>
+                    <th>Function Expression</th>
+                    <th>Arrow Function (ES6)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Syntax</strong></td>
+                    <td><code>function greet() {}</code></td>
+                    <td><code>const greet = function() {}</code></td>
+                    <td><code>const greet = () => {}</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hoisting</strong></td>
+                    <td>Full function hoisted</td>
+                    <td>Variable hoisted (TDZ for let/const)</td>
+                    <td>Variable hoisted (TDZ for let/const)</td>
+                  </tr>
+                  <tr>
+                    <td><strong><code>this</code> binding</strong></td>
+                    <td>Dynamic (caller context)</td>
+                    <td>Dynamic (caller context)</td>
+                    <td><strong>Lexical</strong> (inherits from parent scope)</td>
+                  </tr>
+                  <tr>
+                    <td><strong><code>arguments</code> object</strong></td>
+                    <td>✅ Available</td>
+                    <td>✅ Available</td>
+                    <td>❌ Not available (Use <code>...rest</code>)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>2. Higher-Order Functions (HOFs) & Callbacks</h3>
+            <p>
+              A <strong>Higher-Order Function</strong> is any function that takes another function as an argument or returns a function. The passed function is called a <strong>Callback</strong>.
+            </p>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ HOFs, Callbacks & Closures Demo</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. Higher-Order Function Demonstration
+function calculate(num1, num2, operationCallback) {
+  return operationCallback(num1, num2);
+}
+
+const add = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+
+console.log("Addition via HOF:", calculate(10, 5, add));       // 15
+console.log("Multiply via HOF:", calculate(10, 5, multiply)); // 50
+
+// 2. Rest Parameters (...args)
+function sumAll(...numbers) {
+  return numbers.reduce((sum, n) => sum + n, 0);
+}
+console.log("Sum of multiple args:", sumAll(1, 2, 3, 4, 5)); // 15
+
+// 3. Closure Preview (Function Returning Function)
+function multiplier(factor) {
+  return function(number) {
+    return number * factor; // 'factor' is remembered in closure!
+  };
+}
+const double = multiplier(2);
+const triple = multiplier(3);
+console.log("Double 8:", double(8)); // 16
+console.log("Triple 8:", triple(8)); // 24</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 8: Arrays & Methods
+             ================================================================ -->
+        <article class="topic-card" id="mod-8">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 08</span>
+              <h2 class="topic-title">Arrays & Modern Array Methods</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=22634s" target="_blank" class="timestamp-badge">
+                ▶ 06:17:14 Arrays
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Mutating vs Non-Mutating Methods</h3>
+            <p>
+              Modern JS emphasizes immutability. Knowing whether an array method mutates the original array or returns a new one is critical:
+            </p>
+            <ul>
+              <li><strong>Mutating (In-place):</strong> <code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>, <code>splice()</code>, <code>sort()</code>, <code>reverse()</code>.</li>
+              <li><strong>Non-Mutating (Pure/Immutable):</strong> <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>slice()</code>, <code>concat()</code>, <code>find()</code>, <code>some()</code>, <code>every()</code>, <code>toSorted()</code>.</li>
+            </ul>
+
+            <h3>2. The Big Three: `map`, `filter`, `reduce`</h3>
+            <div class="diagram-card">
+              <div class="diagram-header">🔄 Functional Array Pipeline</div>
+              <div class="diagram-grid">
+                <div class="diagram-box cyan">
+                  <div class="diagram-box-title"><code>map(fn)</code></div>
+                  <div class="diagram-box-body">Transforms every item 1-to-1 into a new array of the exact same length.</div>
+                </div>
+                <div class="diagram-box emerald">
+                  <div class="diagram-box-title"><code>filter(fn)</code></div>
+                  <div class="diagram-box-body">Selects elements matching a boolean predicate into a new filtered array.</div>
+                </div>
+                <div class="diagram-box primary">
+                  <div class="diagram-box-title"><code>reduce(fn, init)</code></div>
+                  <div class="diagram-box-body">Boils down an entire array into a single accumulated result (number, object, array).</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Array Pipeline & Reduce Masterclass</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// E-commerce Cart Calculation
+const cart = [
+  { item: "MacBook Pro", price: 2000, category: "Tech", qty: 1 },
+  { item: "Coffee Mug", price: 15, category: "Lifestyle", qty: 2 },
+  { item: "Wireless Mouse", price: 50, category: "Tech", qty: 2 },
+  { item: "Notebook", price: 10, category: "Stationery", qty: 3 }
+];
+
+// 1. Filter Tech items
+const techItems = cart.filter(p => p.category === "Tech");
+console.log("=== Tech Items ===");
+console.table(techItems);
+
+// 2. Calculate Total Cart Value with reduce
+const grandTotal = cart.reduce((total, item) => {
+  return total + (item.price * item.qty);
+}, 0);
+console.log("Grand Total Price: $" + grandTotal);
+
+// 3. Group by Category using reduce
+const grouped = cart.reduce((acc, item) => {
+  acc[item.category] = acc[item.category] || [];
+  acc[item.category].push(item.item);
+  return acc;
+}, {});
+console.log("Grouped by Category:", grouped);</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 9: Objects & References
+             ================================================================ -->
+        <article class="topic-card" id="mod-9">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 09</span>
+              <h2 class="topic-title">Objects & References Deep Dive</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=26196s" target="_blank" class="timestamp-badge">
+                ▶ 07:16:36 Objects
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>1. Dot Notation vs Bracket Notation</h3>
+            <p>
+              Use <strong>Dot notation (<code>obj.prop</code>)</strong> for standard static keys. Use <strong>Bracket notation (<code>obj[prop]</code>)</strong> when:
+            </p>
+            <ul>
+              <li>The property key is stored inside a variable: <code>const key = "email"; obj[key]</code></li>
+              <li>The key contains special characters or spaces: <code>obj["first-name"]</code></li>
+              <li>The key is dynamic or computed at runtime.</li>
+            </ul>
+
+            <h3>2. Modern Object Utility Methods</h3>
+            <ul>
+              <li><code>Object.keys(obj)</code>: Returns array of property names.</li>
+              <li><code>Object.values(obj)</code>: Returns array of property values.</li>
+              <li><code>Object.entries(obj)</code>: Returns array of <code>[key, value]</code> pairs.</li>
+              <li><code>Object.freeze(obj)</code>: Makes object 100% immutable (no adding, removing, or editing properties).</li>
+              <li><code>Object.seal(obj)</code>: Prevents adding or removing properties, but allows modifying existing writable properties.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-card-header">
+                <span class="code-lang-tag">⚡ Object Destructuring & Freeze</span>
+                <div class="code-actions">
+                  <button class="code-btn btn-copy-code">📋 Copy</button>
+                  <button class="code-btn btn-run btn-run-snippet">▶ Run in IDE</button>
+                </div>
+              </div>
+              <pre><code>// 1. Dynamic Keys & Object Destructuring
+const role = "admin";
+const user = {
+  id: 101,
+  username: "akshat_dev",
+  profile: {
+    roleName: role,
+    location: "India"
+  }
+};
+
+// Nested destructuring with aliasing & defaults
+const { username, profile: { roleName: userRole, location }, status = "active" } = user;
+console.log(`User: ${username} | Role: ${userRole} | Status: ${status}`);
+
+// 2. Object Immutability: Object.freeze vs Object.seal
+const immutableConfig = Object.freeze({ apiEndpoint: "https://api.domain.com", timeout: 5000 });
+// immutableConfig.timeout = 10000; // Silently ignored in non-strict mode, throws TypeError in strict mode!
+console.log("Config timeout remains:", immutableConfig.timeout);
+
+// 3. Object.entries loop
+const stats = { views: 15400, likes: 980, shares: 320 };
+console.log("=== Analytics Entries ===");
+for (const [metric, count] of Object.entries(stats)) {
+  console.log(`${metric.toUpperCase()}: ${count}`);
+}</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODULE 10: Summary & Next Steps
+             ================================================================ -->
+        <article class="topic-card" id="mod-10">
+          <div class="topic-header">
+            <div class="topic-title-group">
+              <span class="topic-tag">Module 10</span>
+              <h2 class="topic-title">Course Outro & Roadmap Forward</h2>
+            </div>
+            <div class="topic-meta">
+              <a href="https://www.youtube.com/watch?v=a-wVHL0lpb0&t=28936s" target="_blank" class="timestamp-badge">
+                ▶ 08:02:16 Outro
+              </a>
+            </div>
+          </div>
+
+          <div class="topic-content">
+            <h3>Congratulations on Completing the Fundamentals!</h3>
+            <p>
+              You now have a rock-solid understanding of JavaScript foundations: V8 architecture, Call Stack, Memory Heap, Primitive vs Reference types, Variable Scope, Hoisting & TDZ, Operators, Control Flow, Loops, First-Class Functions, Array methods, and Objects.
+            </p>
+
+            <div class="callout callout-tip">
+              <span class="callout-icon">🚀</span>
+              <div class="callout-body">
+                <div class="callout-title">Next Step: Sheryians Part 2 (DOM & Asynchronous JS)</div>
+                After mastering the core language, proceed to:
+                1. <strong>DOM Manipulation & Event Listeners</strong> (selecting elements, event delegation, bubbling/capturing)<br/>
+                2. <strong>Asynchronous JavaScript</strong> (Event Loop, Callback Queue, Microtask Queue, Promises, async/await, Fetch API)<br/>
+                3. <strong>Web Storage API</strong> (localStorage, sessionStorage, Cookies).
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ==================================================================
+           VIEW 2: LIVE IDE & CODE PLAYGROUND
+           ================================================================== -->
+      <section id="view-ide" class="view-section">
+        <div class="course-hero" style="margin-bottom:1.5rem; padding:1.5rem;">
+          <h2 class="hero-title" style="font-size:1.6rem;">⚡ Interactive JavaScript Playground</h2>
+          <p class="hero-desc" style="font-size:0.95rem; margin-bottom:0.5rem;">
+            Write, test, and experiment with JavaScript code directly in your browser. Features real-time output capturing for <code>console.log</code>, <code>console.table</code>, <code>console.warn</code>, and <code>console.error</code>.
+          </p>
+        </div>
+
+        <div class="playground-container">
+          <!-- Editor Pane -->
+          <div class="editor-pane">
+            <div class="pane-header">
+              <span class="pane-title">📝 Code Editor</span>
+              <div class="editor-controls">
+                <select id="code-preset-select" class="code-preset-select" title="Load Preset Example">
+                  <option value="hoisting">Preset: Hoisting & TDZ</option>
+                  <option value="types_memory">Preset: Memory & References</option>
+                  <option value="coercion">Preset: Type Coercion Quirks</option>
+                  <option value="array_methods">Preset: Map / Filter / Reduce</option>
+                  <option value="functions_closures">Preset: HOFs & Closures</option>
+                </select>
+                <button id="btn-run-code" class="btn-execute">▶ Run Code</button>
+              </div>
+            </div>
+            <textarea id="ide-editor" class="ide-textarea" spellcheck="false" placeholder="// Type or paste your JavaScript code here..."></textarea>
+          </div>
+
+          <!-- Virtual Console Pane -->
+          <div class="console-pane">
+            <div class="pane-header">
+              <span class="pane-title">🖥️ Output Console</span>
+              <div class="editor-controls">
+                <button id="btn-clear-console" class="code-btn">🗑️ Clear</button>
+              </div>
+            </div>
+            <div id="console-output" class="console-output">
+              <div class="console-empty">Console ready. Click "Run Code" or press Ctrl+Enter to execute.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 3: INTERACTIVE QUIZ & ASSESSMENT
+           ================================================================== -->
+      <section id="view-quiz" class="view-section">
+        <div class="quiz-container">
+          <div class="course-hero" style="margin-bottom:1.5rem; padding:1.5rem;">
+            <h2 class="hero-title" style="font-size:1.6rem;">🎯 JavaScript Core Assessment</h2>
+            <p class="hero-desc" style="font-size:0.95rem; margin-bottom:0;">
+              Test your understanding of concepts taught in the Sheryians full course. Immediate feedback and in-depth explanations provided for every question!
+            </p>
+          </div>
+
+          <div id="quiz-active-view" class="quiz-card">
+            <div class="quiz-progress-bar">
+              <div id="quiz-progress-fill" class="quiz-progress-fill"></div>
+            </div>
+
+            <div class="quiz-meta">
+              <span id="quiz-counter">Question 1 of 10</span>
+              <span style="color:var(--accent-primary); font-weight:600;">Sheryians JS Quiz</span>
+            </div>
+
+            <h3 id="quiz-question-text" class="quiz-question-text"></h3>
+
+            <div id="quiz-code-box" class="quiz-code-block" style="display:none;"></div>
+
+            <div id="quiz-options-list" class="quiz-options"></div>
+
+            <div id="quiz-explanation-box" class="quiz-explanation"></div>
+
+            <div class="quiz-controls">
+              <div></div>
+              <button id="btn-quiz-next" class="btn-execute" disabled>Next Question →</button>
+            </div>
+          </div>
+
+          <div id="quiz-result-view" class="quiz-card quiz-summary-card" style="display:none;">
+            <div id="quiz-score-badge" class="quiz-score-badge">0/10</div>
+            <h3 style="font-size:1.8rem; margin-bottom:0.75rem;">Quiz Completed!</h3>
+            <p id="quiz-score-msg" style="color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem;"></p>
+            <button id="btn-quiz-restart" class="btn-execute" style="margin:0 auto;">🔄 Retake Quiz</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 4: 3D REVISION FLASHCARDS
+           ================================================================== -->
+      <section id="view-flashcards" class="view-section">
+        <div class="flashcards-container">
+          <div class="course-hero" style="margin-bottom:1.5rem; padding:1.5rem; text-align:center;">
+            <h2 class="hero-title" style="font-size:1.6rem;">🗂️ Rapid Concept Flashcards</h2>
+            <p class="hero-desc" style="font-size:0.95rem; margin:0 auto;">
+              Click the card to flip between Question and Answer. Perfect for active recall and interview revision.
+            </p>
+          </div>
+
+          <div id="flashcard-wrapper" class="flashcard-wrapper">
+            <!-- Front Face -->
+            <div class="flashcard-face flashcard-front">
+              <div class="card-top">
+                <span id="card-category" class="card-category">CATEGORY</span>
+                <span class="card-hint">💡 Click to Flip</span>
+              </div>
+              <div class="card-center">
+                <h3 id="card-question" class="card-question"></h3>
+              </div>
+              <div class="card-footer-tip">Active Recall Mode</div>
+            </div>
+
+            <!-- Back Face -->
+            <div class="flashcard-face flashcard-back">
+              <div class="card-top">
+                <span class="card-category" style="color:var(--accent-emerald);">ANSWER & EXPLANATION</span>
+                <span class="card-hint">💡 Click to Flip Back</span>
+              </div>
+              <div class="card-center">
+                <p id="card-answer" class="card-answer"></p>
+              </div>
+              <div class="card-footer-tip">Sheryians Core Knowledge</div>
+            </div>
+          </div>
+
+          <!-- Flashcard Controls -->
+          <div class="flashcard-controls">
+            <button id="btn-card-prev" class="code-btn" style="padding:0.6rem 1.2rem; font-size:0.9rem;">← Previous Card</button>
+            <span id="card-counter" style="color:var(--text-muted); font-size:0.9rem;">Card 1 of 10</span>
+            <button id="btn-card-next" class="btn-execute" style="padding:0.6rem 1.2rem; font-size:0.9rem;">Next Card →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 5: INTERVIEW Q&A ACCORDION
+           ================================================================== -->
+      <section id="view-interview" class="view-section">
+        <div class="course-hero" style="margin-bottom:2rem; padding:1.75rem;">
+          <h2 class="hero-title" style="font-size:1.75rem;">💡 Top Tricky JavaScript Interview Questions</h2>
+          <p class="hero-desc" style="font-size:1rem; margin-bottom:0;">
+            Curated tricky questions frequently asked in frontend interviews at top tech companies.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>1. What is the output of <code>[] + {}</code> versus <code>{} + []</code>?</span>
+              <span class="faq-badge">Type Coercion</span>
+            </button>
+            <div class="faq-content">
+              <p>• <strong><code>[] + {}</code></strong> evaluates to <strong><code>"[object Object]"</code></strong>. The <code>+</code> operator coerces <code>[]</code> to an empty string <code>""</code> via <code>[].toString()</code>, and <code>{}.toString()</code> produces <code>"[object Object]"</code>. Result: <code>"" + "[object Object]" = "[object Object]"</code>.</p>
+              <p>• <strong><code>{} + []</code></strong> in a standalone browser console line may evaluate to <strong><code>0</code></strong> because the leading <code>{}</code> is parsed as an empty code block, and <code>+[]</code> is treated as unary plus on an empty array, coercing it to <code>0</code>! (Inside an expression like <code>({} + [])</code> it evaluates to <code>"[object Object]"</code>).</p>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>2. Explain why <code>typeof NaN === 'number'</code> and how to properly check for NaN.</span>
+              <span class="faq-badge">Core Engine</span>
+            </button>
+            <div class="faq-content">
+              <p>In the IEEE 754 floating-point standard used by JavaScript, <code>NaN</code> (Not-a-Number) is a special numeric value representing an undefined or unrepresentable mathematical result (e.g. <code>0 / 0</code> or <code>parseInt("hello")</code>).</p>
+              <p>Because <code>NaN !== NaN</code> (it is never equal to itself), you should NEVER check with <code>val === NaN</code>. Always use <strong><code>Number.isNaN(val)</code></strong> (which checks if the value is strictly NaN without type coercion) rather than the global <code>isNaN()</code>.</p>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>3. Why does <code>0.1 + 0.2 !== 0.3</code> in JavaScript?</span>
+              <span class="faq-badge">Precision</span>
+            </button>
+            <div class="faq-content">
+              <p>JavaScript represents all numbers using 64-bit binary floating-point format (IEEE 754). Numbers like <code>0.1</code> and <code>0.2</code> have repeating infinite binary fractions and cannot be represented with exact precision in binary. <code>0.1 + 0.2</code> yields <code>0.30000000000000004</code>.</p>
+              <p><strong>Solution:</strong> Use <code>Number.EPSILON</code> or rounding: <code>Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON</code> (returns <code>true</code>).</p>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>4. What is the difference between Function Declaration and Function Expression?</span>
+              <span class="faq-badge">Functions</span>
+            </button>
+            <div class="faq-content">
+              <p>• <strong>Function Declarations:</strong> <code>function foo() {}</code> are hoisted entirely during the memory creation phase. You can safely call <code>foo()</code> anywhere in the scope, even before its definition line.</p>
+              <p>• <strong>Function Expressions:</strong> <code>const foo = function() {}</code> assign an anonymous function to a variable. The variable declaration is hoisted, but the function assignment occurs only at execution time. Calling <code>foo()</code> before that line throws a <code>ReferenceError</code> (if let/const) or <code>TypeError: foo is not a function</code> (if var).</p>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>5. What is the difference between <code>map()</code> and <code>forEach()</code>?</span>
+              <span class="faq-badge">Arrays</span>
+            </button>
+            <div class="faq-content">
+              <p>• <strong><code>map()</code>:</strong> Returns a <em>brand new array</em> containing the results of calling the provided function on every element. It does not mutate the original array and is chainable with <code>.filter()</code> or <code>.reduce()</code>.</p>
+              <p>• <strong><code>forEach()</code>:</strong> Executes a provided function once for each array element and always returns <code>undefined</code>. It is strictly used for side-effects (e.g. logging or mutating external state) and is not chainable.</p>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>6. How do Closures work in JavaScript and where are they used in real projects?</span>
+              <span class="faq-badge">Advanced</span>
+            </button>
+            <div class="faq-content">
+              <p>A <strong>Closure</strong> is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In simple terms: a function remembers the variables from the outer scope where it was created, even after that outer function has finished executing.</p>
+              <p><strong>Real-World Use Cases:</strong></p>
+              <ul>
+                <li>Creating private variables & data encapsulation (Module pattern).</li>
+                <li>Debouncing and Throttling functions for search inputs / scroll handlers.</li>
+                <li>Currying and Function Factories.</li>
+                <li>Maintaining state in asynchronous timer callbacks and event listeners.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           VIEW 6: PRACTICE CHALLENGES
+           ================================================================== -->
+      <section id="view-challenges" class="view-section">
+        <div class="course-hero" style="margin-bottom:2rem; padding:1.75rem;">
+          <h2 class="hero-title" style="font-size:1.75rem;">💻 Hands-On Coding Challenges</h2>
+          <p class="hero-desc" style="font-size:1rem; margin-bottom:0;">
+            Strengthen your problem-solving muscle. Click "Solve in IDE" on any challenge to load the problem template and test your solution!
+          </p>
+        </div>
+
+        <div class="challenges-grid">
+          <!-- Challenge 1 -->
+          <div class="challenge-card">
+            <div>
+              <span class="challenge-badge easy">Easy</span>
+              <h3 class="challenge-title">1. Array Unique Values</h3>
+              <p class="challenge-desc">Write a function <code>getUnique(arr)</code> that takes an array with duplicates and returns an array with only unique values using both ES6 <code>Set</code> and <code>filter()</code>.</p>
+            </div>
+            <button class="code-btn btn-run btn-run-snippet" style="width:100%; justify-content:center; padding:0.6rem;">⚡ Solve in IDE</button>
+            <div class="code-card" style="display:none;">
+              <pre><code>// Challenge 1: Return Unique Elements
+function getUnique(arr) {
+  // Method 1: Using Set
+  const setUnique = [...new Set(arr)];
+  
+  // Method 2: Using filter & indexOf
+  const filterUnique = arr.filter((item, idx) => arr.indexOf(item) === idx);
+
+  return { setUnique, filterUnique };
+}
+
+const numbers = [1, 2, 2, 3, 4, 4, 5, 1, 6];
+console.log("Original:", numbers);
+console.log("Unique Result:", getUnique(numbers));</code></pre>
+            </div>
+          </div>
+
+          <!-- Challenge 2 -->
+          <div class="challenge-card">
+            <div>
+              <span class="challenge-badge medium">Medium</span>
+              <h3 class="challenge-title">2. Flatten a Nested Array</h3>
+              <p class="challenge-desc">Write a recursive function <code>flattenArray(arr)</code> without using the built-in <code>Array.prototype.flat()</code>.</p>
+            </div>
+            <button class="code-btn btn-run btn-run-snippet" style="width:100%; justify-content:center; padding:0.6rem;">⚡ Solve in IDE</button>
+            <div class="code-card" style="display:none;">
+              <pre><code>// Challenge 2: Deep Flatten Array using Recursion & Reduce
+function flattenArray(arr) {
+  return arr.reduce((acc, curr) => {
+    if (Array.isArray(curr)) {
+      return acc.concat(flattenArray(curr));
+    } else {
+      return acc.concat(curr);
+    }
+  }, []);
+}
+
+const nested = [1, [2, [3, [4, 5]], 6], 7];
+console.log("Flattened:", flattenArray(nested)); // [1, 2, 3, 4, 5, 6, 7]</code></pre>
+            </div>
+          </div>
+
+          <!-- Challenge 3 -->
+          <div class="challenge-card">
+            <div>
+              <span class="challenge-badge medium">Medium</span>
+              <h3 class="challenge-title">3. Word Frequency Counter</h3>
+              <p class="challenge-desc">Given a sentence string, return an object representing the frequency of each word using <code>reduce()</code>.</p>
+            </div>
+            <button class="code-btn btn-run btn-run-snippet" style="width:100%; justify-content:center; padding:0.6rem;">⚡ Solve in IDE</button>
+            <div class="code-card" style="display:none;">
+              <pre><code>// Challenge 3: Word Frequency Counter
+function countWordFrequency(str) {
+  const words = str.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/);
+  
+  return words.reduce((acc, word) => {
+    if (!word) return acc;
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+const text = "JavaScript is great, and JavaScript is versatile!";
+console.log("Frequency Result:", countWordFrequency(text));</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Floating Quick IDE Trigger -->
+  <button id="fab-playground" class="fab-playground" title="Open Live Code IDE">
+    <span>⚡</span> Quick IDE
+  </button>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Main Application Script -->
+  <script>
+/**
+ * JavaScript Masterclass Study Portal - Application Script
+ * Features: Live Sandboxed Code IDE, Console Interceptor, Interactive Quiz, 
+ * 3D Flashcards, Search Engine, and Progress Persistence.
+ */
+
+// Global State
+const state = {
+  activeView: 'notes',
+  activeTopic: 'mod-1',
+  completedTopics: JSON.parse(localStorage.getItem('js_course_completed') || '[]'),
+  currentQuizIndex: 0,
+  quizScore: 0,
+  quizAnswered: false,
+  currentFlashcardIndex: 0,
+  flashcardsFlipped: false
+};
+
+// Quiz Question Bank (20+ In-Depth Questions based on the Course)
+const quizQuestions = [
+  {
+    id: 1,
+    topic: "Variables & Hoisting",
+    question: "What will be logged to the console?",
+    code: "console.log(a);\nvar a = 10;\nconsole.log(b);\nlet b = 20;",
+    options: [
+      "10 and 20",
+      "undefined and undefined",
+      "undefined and ReferenceError: Cannot access 'b' before initialization",
+      "ReferenceError and ReferenceError"
+    ],
+    answer: 2,
+    explanation: "`var a` is hoisted and initialized with `undefined`. `let b` is also hoisted to the top of its block scope, but remains uninitialized in the Temporal Dead Zone (TDZ) until the declaration line is reached, throwing a ReferenceError."
+  },
+  {
+    id: 2,
+    topic: "Data Types & Memory",
+    question: "What will be logged to the console?",
+    code: "let arr1 = [1, 2, 3];\nlet arr2 = arr1;\narr2.push(4);\nconsole.log(arr1.length);",
+    options: ["3", "4", "undefined", "TypeError"],
+    answer: 1,
+    explanation: "Arrays are non-primitive Reference Types. Both `arr1` and `arr2` point to the exact same memory address in the Heap. Modifying `arr2` directly modifies `arr1`."
+  },
+  {
+    id: 3,
+    topic: "Type Coercion",
+    question: "What is the output of `[] + []` and `[] + {}` in JavaScript?",
+    code: "console.log([] + []);\nconsole.log([] + {});",
+    options: [
+      "'' (empty string) and '[object Object]'",
+      "0 and NaN",
+      "undefined and null",
+      "[] and {}"
+    ],
+    answer: 0,
+    explanation: "The `+` operator coerces objects to primitives. `[].toString()` is `''`. `'' + ''` is `''`. For `[] + {}`, `'' + '[object Object]'` results in `'[object Object]'`."
+  },
+  {
+    id: 4,
+    topic: "Operators & Short-Circuiting",
+    question: "What is the result of the following expression?",
+    code: "let val = 0 || 'Sheryians' && null ?? 'Default';\nconsole.log(val);",
+    options: ["0", "'Sheryians'", "null", "'Default'"],
+    answer: 2,
+    explanation: "`'Sheryians' && null` evaluates to `null`. Then `0 || null` evaluates to `null` (since 0 is falsy). Finally `null ?? 'Default'` returns `'Default'`? Wait! `??` only falls back for null/undefined: here `(0 || (null)) ?? 'Default'` => `null ?? 'Default'` returns `'Default'`. However, `&&` has higher precedence than `||`: `0 || ( 'Sheryians' && null )` -> `0 || null` -> `null`. Then `null ?? 'Default'` -> `'Default'`."
+  },
+  {
+    id: 5,
+    topic: "Functions & Closures",
+    question: "What will this loop output after 100ms?",
+    code: "for (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}",
+    options: ["0, 1, 2", "3, 3, 3", "undefined, undefined, undefined", "0, 0, 0"],
+    answer: 1,
+    explanation: "`var` is function-scoped (not block-scoped). All timer callbacks close over the exact same variable `i`. By the time the event loop runs the callbacks, `i` has incremented to 3."
+  },
+  {
+    id: 6,
+    topic: "Array Methods",
+    question: "What does the `reduce()` method return in this accumulator calculation?",
+    code: "const nums = [10, 20, 30];\nconst res = nums.reduce((acc, curr) => acc + curr, 5);\nconsole.log(res);",
+    options: ["60", "65", "[15, 25, 35]", "undefined"],
+    answer: 1,
+    explanation: "The second parameter `5` is the initial value of the accumulator `acc`. The iterations run: 5+10=15 -> 15+20=35 -> 35+30=65."
+  },
+  {
+    id: 7,
+    topic: "Objects & Mutability",
+    question: "What happens when you modify a property of an `Object.freeze()` object?",
+    code: "'use strict';\nconst user = Object.freeze({ name: 'Harsh' });\nuser.name = 'Sheryians';\nconsole.log(user.name);",
+    options: [
+      "'Sheryians'",
+      "TypeError: Cannot assign to read only property in strict mode",
+      "undefined",
+      "NaN"
+    ],
+    answer: 1,
+    explanation: "`Object.freeze()` prevents modifications, additions, and deletions. In non-strict mode it fails silently; in strict mode (`'use strict'`), it throws a `TypeError`."
+  },
+  {
+    id: 8,
+    topic: "Type System Quirks",
+    question: "What is `typeof NaN` and `typeof null` in JavaScript?",
+    code: "console.log(typeof NaN, typeof null);",
+    options: [
+      "'number' and 'object'",
+      "'nan' and 'null'",
+      "'undefined' and 'object'",
+      "'number' and 'null'"
+    ],
+    answer: 0,
+    explanation: "`NaN` stands for 'Not a Number' but is a numeric type representing an invalid number calculation (typeof is `'number'`). `typeof null === 'object'` is a legacy bug in JavaScript from its first 1995 implementation."
+  },
+  {
+    id: 9,
+    topic: "Array Slice vs Splice",
+    question: "Which of the following statements is true about `slice()` and `splice()`?",
+    code: "const arr = [1, 2, 3, 4, 5];",
+    options: [
+      "`slice()` mutates the original array; `splice()` returns a shallow copy",
+      "`splice()` mutates the original array; `slice()` returns a shallow copy without modifying original",
+      "Both mutate the original array",
+      "Neither mutates the original array"
+    ],
+    answer: 1,
+    explanation: "`slice(start, end)` is pure/non-destructive and returns a new sub-array. `splice(start, deleteCount, ...items)` is destructive/mutating and modifies the array in-place."
+  },
+  {
+    id: 10,
+    topic: "Arrow Functions & `this`",
+    question: "What is the output of calling `obj.greet()`?",
+    code: "const obj = {\n  name: 'Alex',\n  greet: () => {\n    console.log(this.name);\n  }\n};\nobj.greet();",
+    options: ["'Alex'", "undefined (or window.name in browser)", "TypeError: this is not defined", "null"],
+    answer: 1,
+    explanation: "Arrow functions DO NOT have their own `this` binding. They inherit `this` lexically from their enclosing scope (here, the global window/module scope), not the calling object."
+  }
+];
+
+// Flashcard Deck for Rapid Revision
+const flashcards = [
+  {
+    category: "Execution Architecture",
+    question: "What is the Call Stack and Memory Heap?",
+    answer: "• **Call Stack**: A LIFO (Last In, First Out) data structure that tracks active execution contexts and function execution.\n• **Memory Heap**: An unstructured memory region where reference types (Objects, Arrays, Functions) are allocated."
+  },
+  {
+    category: "Variables & Scope",
+    question: "What is the Temporal Dead Zone (TDZ)?",
+    answer: "The period of time between entering a block scope and the actual line where a `let` or `const` variable is declared. Accessing the variable during TDZ triggers a **ReferenceError**."
+  },
+  {
+    category: "Data Types",
+    question: "What are the 7 Primitive Data Types in JS?",
+    answer: "1. `Number`\n2. `String`\n3. `Boolean`\n4. `Undefined`\n5. `Null`\n6. `Symbol` (ES6)\n7. `BigInt` (ES2020)\n\n*All primitives are stored directly on the Call Stack and are immutable.*"
+  },
+  {
+    category: "Type Coercion",
+    question: "What are the 8 Falsy Values in JavaScript?",
+    answer: "1. `false`\n2. `0`\n3. `-0`\n4. `0n` (BigInt zero)\n5. `\"\"` (Empty string)\n6. `null`\n7. `undefined`\n8. `NaN`\n\n*Everything else in JavaScript is Truthy (including `[]`, `{}`, and `\"0\"`).*"
+  },
+  {
+    category: "Operators",
+    question: "Difference between `==` and `===`?",
+    answer: "• `==` (Loose equality): Performs **type coercion** before comparing values.\n• `===` (Strict equality): Compares both **value AND data type** without coercion."
+  },
+  {
+    category: "Operators",
+    question: "What is Nullish Coalescing (`??`) vs OR (`||`)?",
+    answer: "• `||` returns the right-hand operand if the left is ANY falsy value (`0`, `\"\"`, `false`, `null`, `undefined`).\n• `??` ONLY falls back if the left operand is specifically `null` or `undefined` (safe for 0 and false)."
+  },
+  {
+    category: "Functions",
+    question: "What is a Higher-Order Function (HOF)?",
+    answer: "A function that either:\n1. Accepts another function as an argument (e.g. `map`, `filter`, `addEventListener`), or\n2. Returns a new function (e.g. Currying, Function factories)."
+  },
+  {
+    category: "Arrays",
+    question: "How does `Array.prototype.reduce()` work?",
+    answer: "`array.reduce((accumulator, currentValue, currentIndex, array) => { ... }, initialValue)`\nIterates through the array, accumulating a single result across all elements."
+  },
+  {
+    category: "Objects",
+    question: "What is the difference between `Object.freeze()` and `Object.seal()`?",
+    answer: "• `Object.freeze()`: Cannot add, delete, OR modify existing properties.\n• `Object.seal()`: Cannot add or delete properties, BUT existing writable properties CAN still be modified."
+  },
+  {
+    category: "Memory & References",
+    question: "How do you create a deep clone of a nested object?",
+    answer: "Modern JS: `structuredClone(obj)`\nAlternative: `JSON.parse(JSON.stringify(obj))` (fails on functions/symbols/circular refs)\nLibraries: `lodash.cloneDeep(obj)`"
+  }
+];
+
+// Preset Code Snippets for the Live IDE
+const codePresets = {
+  hoisting: `// --- 1. Hoisting & Temporal Dead Zone Demo ---
+console.log("=== VAR Hoisting ===");
+console.log("Value of hoistedVar before declaration:", hoistedVar); // undefined
+var hoistedVar = "I am a var";
+console.log("Value after assignment:", hoistedVar);
+
+console.log("\n=== LET & TDZ ===");
+try {
+  console.log(hoistedLet); // Throws ReferenceError!
+  let hoistedLet = "I am a let";
+} catch (err) {
+  console.error("TDZ Error Caught:", err.message);
+}`,
+
+  types_memory: `// --- 2. Primitive vs Reference Memory ---
+console.log("=== Primitive (Passed by Value) ===");
+let a = 100;
+let b = a;
+b = 200;
+console.log("a is:", a, "| b is:", b); // a remains 100
+
+console.log("\n=== Reference (Passed by Reference) ===");
+let originalObj = { user: "Akshat", skills: ["JS", "React"] };
+let copiedRef = originalObj; // Points to same heap address!
+
+copiedRef.user = "Sheryians Developer";
+console.log("originalObj.user:", originalObj.user); // Modified!
+
+console.log("\n=== Deep Clone using structuredClone ===");
+let deepClone = structuredClone(originalObj);
+deepClone.user = "Independent Clone";
+console.log("originalObj.user:", originalObj.user);
+console.log("deepClone.user:", deepClone.user);`,
+
+  coercion: `// --- 3. JavaScript Type Coercion Mysteries ---
+console.log("[] + [] =>", JSON.stringify([] + []));         // ""
+console.log("[] + {} =>", [] + {});                         // "[object Object]"
+console.log("{} + [] =>", {} + []);                         // "[object Object]" or 0 in console
+console.log("true + false =>", true + false);               // 1
+console.log("'5' - 2 =>", '5' - 2);                         // 3 (subtraction coerces string to number)
+console.log("'5' + 2 =>", '5' + 2);                         // "52" (addition concatenates string)
+console.log("typeof NaN =>", typeof NaN);                   // "number"
+console.log("NaN === NaN =>", NaN === NaN);                 // false (use Number.isNaN!)`,
+
+  array_methods: `// --- 4. Array Mastery: Map, Filter, Reduce ---
+const students = [
+  { name: "Rahul", score: 85, passed: true },
+  { name: "Priya", score: 42, passed: false },
+  { name: "Amit", score: 92, passed: true },
+  { name: "Neha", score: 78, passed: true }
+];
+
+console.log("=== High Scorers (> 80) ===");
+const toppers = students.filter(s => s.score > 80);
+console.table(toppers);
+
+console.log("\n=== Average Score Calculation (Reduce) ===");
+const totalScore = students.reduce((acc, curr) => acc + curr.score, 0);
+const avgScore = totalScore / students.length;
+console.log("Class Average:", avgScore);`,
+
+  functions_closures: `// --- 5. Higher-Order Functions & Closures ---
+function createCounter(initialValue = 0) {
+  let count = initialValue; // Private variable closed over
+  
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getValue: () => count
+  };
+}
+
+const counterA = createCounter(10);
+console.log("Increment:", counterA.increment()); // 11
+console.log("Increment:", counterA.increment()); // 12
+console.log("Current Count:", counterA.getValue()); // 12
+
+const counterB = createCounter(100);
+console.log("Counter B Initial:", counterB.getValue()); // 100 (Independent scope)`
+};
+
+// ============================================================================
+// Initialization & Event Binding
+// ============================================================================
+document.addEventListener('DOMContentLoaded', () => {
+  initNavigation();
+  initProgressTracker();
+  initCodePlayground();
+  initQuiz();
+  initFlashcards();
+  initFaqAccordion();
+  initSearch();
+  updateProgressUI();
+});
+
+// Navigation Controller
+function initNavigation() {
+  const navTabs = document.querySelectorAll('.tab-btn');
+  const viewSections = document.querySelectorAll('.view-section');
+
+  navTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const view = tab.dataset.view;
+      switchView(view);
+    });
+  });
+
+  // Sidebar link clicks
+  const sidebarLinks = document.querySelectorAll('.module-nav-item');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (e.target.classList.contains('module-checkbox')) return;
+      e.preventDefault();
+      switchView('notes');
+      
+      const targetId = link.getAttribute('href').substring(1);
+      const targetCard = document.getElementById(targetId);
+      if (targetCard) {
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Floating Action Button
+  const fab = document.getElementById('fab-playground');
+  if (fab) {
+    fab.addEventListener('click', () => switchView('ide'));
+  }
+}
+
+function switchView(viewName) {
+  state.activeView = viewName;
+  
+  document.querySelectorAll('.tab-btn').forEach(t => {
+    t.classList.toggle('active', t.dataset.view === viewName);
+  });
+
+  document.querySelectorAll('.view-section').forEach(sec => {
+    sec.classList.toggle('active', sec.id === `view-${viewName}`);
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Progress & LocalStorage
+function initProgressTracker() {
+  const checkboxes = document.querySelectorAll('.module-checkbox');
+  
+  checkboxes.forEach(cb => {
+    const moduleId = cb.dataset.module;
+    if (state.completedTopics.includes(moduleId)) {
+      cb.checked = true;
+    }
+
+    cb.addEventListener('change', () => {
+      if (cb.checked) {
+        if (!state.completedTopics.includes(moduleId)) {
+          state.completedTopics.push(moduleId);
+        }
+        showToast(`Topic Marked Complete!`);
+      } else {
+        state.completedTopics = state.completedTopics.filter(id => id !== moduleId);
+      }
+      localStorage.setItem('js_course_completed', JSON.stringify(state.completedTopics));
+      updateProgressUI();
+    });
+  });
+}
+
+function updateProgressUI() {
+  const total = document.querySelectorAll('.module-checkbox').length || 10;
+  const completed = state.completedTopics.length;
+  const percent = Math.round((completed / total) * 100);
+
+  const fill = document.getElementById('progress-fill-mini');
+  const text = document.getElementById('progress-text');
+  if (fill) fill.style.width = `${percent}%`;
+  if (text) text.textContent = `${percent}% Completed`;
+}
+
+// ============================================================================
+// Sandboxed Code Playground / IDE & Console Interceptor
+// ============================================================================
+function initCodePlayground() {
+  const ideTextarea = document.getElementById('ide-editor');
+  const consoleOutput = document.getElementById('console-output');
+  const runBtn = document.getElementById('btn-run-code');
+  const clearBtn = document.getElementById('btn-clear-console');
+  const presetSelect = document.getElementById('code-preset-select');
+
+  // Load initial preset
+  if (ideTextarea && !ideTextarea.value) {
+    ideTextarea.value = codePresets.hoisting;
+  }
+
+  if (presetSelect) {
+    presetSelect.addEventListener('change', () => {
+      const selected = presetSelect.value;
+      if (codePresets[selected]) {
+        ideTextarea.value = codePresets[selected];
+        runPlaygroundCode();
+      }
+    });
+  }
+
+  if (runBtn) {
+    runBtn.addEventListener('click', runPlaygroundCode);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      consoleOutput.innerHTML = `<div class="console-empty">Console is ready. Press "Run Code" or Ctrl+Enter.</div>`;
+    });
+  }
+
+  // Keyboard shortcut Ctrl+Enter to execute
+  if (ideTextarea) {
+    ideTextarea.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        runPlaygroundCode();
+      }
+    });
+  }
+
+  // Bind all "Run in IDE" buttons across the notes
+  document.querySelectorAll('.btn-run-snippet').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.closest('.code-card').querySelector('pre code');
+      if (codeBlock && ideTextarea) {
+        ideTextarea.value = codeBlock.innerText.trim();
+        switchView('ide');
+        setTimeout(runPlaygroundCode, 150);
+      }
+    });
+  });
+
+  // Bind all "Copy" buttons
+  document.querySelectorAll('.btn-copy-code').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.closest('.code-card').querySelector('pre code');
+      if (codeBlock) {
+        navigator.clipboard.writeText(codeBlock.innerText.trim()).then(() => {
+          showToast('Code copied to clipboard!');
+        });
+      }
+    });
+  });
+}
+
+function runPlaygroundCode() {
+  const ideTextarea = document.getElementById('ide-editor');
+  const consoleOutput = document.getElementById('console-output');
+  if (!ideTextarea || !consoleOutput) return;
+
+  const code = ideTextarea.value;
+  consoleOutput.innerHTML = '';
+
+  const logs = [];
+
+  // Helper formatter for types
+  function formatValue(v) {
+    if (v === null) return `<span class="hl-bool">null</span>`;
+    if (v === undefined) return `<span class="hl-cm">undefined</span>`;
+    if (typeof v === 'string') return `<span class="hl-str">"${v}"</span>`;
+    if (typeof v === 'number') return `<span class="hl-num">${v}</span>`;
+    if (typeof v === 'boolean') return `<span class="hl-bool">${v}</span>`;
+    if (typeof v === 'function') return `<span class="hl-fn">[Function: ${v.name || 'anonymous'}]</span>`;
+    if (typeof v === 'object') {
+      try {
+        return JSON.stringify(v, null, 2);
+      } catch (e) {
+        return `[Circular Object]`;
+      }
+    }
+    return String(v);
+  }
+
+  // Custom Console
+  const customConsole = {
+    log: (...args) => {
+      const formatted = args.map(formatValue).join(' ');
+      appendConsoleMsg('log', formatted);
+    },
+    error: (...args) => {
+      const formatted = args.map(a => a instanceof Error ? a.stack : formatValue(a)).join(' ');
+      appendConsoleMsg('error', `❌ ${formatted}`);
+    },
+    warn: (...args) => {
+      const formatted = args.map(formatValue).join(' ');
+      appendConsoleMsg('warn', `⚠️ ${formatted}`);
+    },
+    info: (...args) => {
+      const formatted = args.map(formatValue).join(' ');
+      appendConsoleMsg('info', `ℹ️ ${formatted}`);
+    },
+    table: (data) => {
+      if (Array.isArray(data) && data.length > 0 && typeof data[0] === 'object') {
+        const keys = Object.keys(data[0]);
+        let tableHtml = `<div class="table-wrapper"><table class="custom-table"><thead><tr><th>(index)</th>`;
+        keys.forEach(k => tableHtml += `<th>${k}</th>`);
+        tableHtml += `</tr></thead><tbody>`;
+        data.forEach((row, idx) => {
+          tableHtml += `<tr><td>${idx}</td>`;
+          keys.forEach(k => tableHtml += `<td>${formatValue(row[k])}</td>`);
+          tableHtml += `</tr>`;
+        });
+        tableHtml += `</tbody></table></div>`;
+        appendConsoleMsg('table', tableHtml);
+      } else {
+        appendConsoleMsg('log', JSON.stringify(data, null, 2));
+      }
+    }
+  };
+
+  function appendConsoleMsg(type, htmlContent) {
+    const el = document.createElement('div');
+    el.className = `console-msg ${type}`;
+    el.innerHTML = htmlContent;
+    consoleOutput.appendChild(el);
+    consoleOutput.scrollTop = consoleOutput.scrollHeight;
+  }
+
+  try {
+    // Execute safely wrapped with overridden console
+    const runner = new Function('console', code);
+    runner(customConsole);
+    if (consoleOutput.children.length === 0) {
+      appendConsoleMsg('info', 'Code executed successfully (no console output returned).');
+    }
+  } catch (err) {
+    appendConsoleMsg('error', `❌ Uncaught ${err.name}: ${err.message}`);
+  }
+}
+
+// ============================================================================
+// Interactive Quiz Engine
+// ============================================================================
+function initQuiz() {
+  renderQuizQuestion();
+
+  const nextBtn = document.getElementById('btn-quiz-next');
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (state.currentQuizIndex < quizQuestions.length - 1) {
+        state.currentQuizIndex++;
+        state.quizAnswered = false;
+        renderQuizQuestion();
+      } else {
+        renderQuizResults();
+      }
+    });
+  }
+
+  const restartBtn = document.getElementById('btn-quiz-restart');
+  if (restartBtn) {
+    restartBtn.addEventListener('click', () => {
+      state.currentQuizIndex = 0;
+      state.quizScore = 0;
+      state.quizAnswered = false;
+      document.getElementById('quiz-active-view').style.display = 'block';
+      document.getElementById('quiz-result-view').style.display = 'none';
+      renderQuizQuestion();
+    });
+  }
+}
+
+function renderQuizQuestion() {
+  const q = quizQuestions[state.currentQuizIndex];
+  if (!q) return;
+
+  const progressFill = document.getElementById('quiz-progress-fill');
+  const counterText = document.getElementById('quiz-counter');
+  const questionText = document.getElementById('quiz-question-text');
+  const codeBox = document.getElementById('quiz-code-box');
+  const optionsList = document.getElementById('quiz-options-list');
+  const explanationBox = document.getElementById('quiz-explanation-box');
+  const nextBtn = document.getElementById('btn-quiz-next');
+
+  if (progressFill) {
+    progressFill.style.width = `${((state.currentQuizIndex + 1) / quizQuestions.length) * 100}%`;
+  }
+  if (counterText) {
+    counterText.textContent = `Question ${state.currentQuizIndex + 1} of ${quizQuestions.length}`;
+  }
+  if (questionText) {
+    questionText.textContent = q.question;
+  }
+
+  if (codeBox) {
+    if (q.code) {
+      codeBox.style.display = 'block';
+      codeBox.innerHTML = `<code>${escapeHtml(q.code)}</code>`;
+    } else {
+      codeBox.style.display = 'none';
+    }
+  }
+
+  if (explanationBox) {
+    explanationBox.classList.remove('show');
+    explanationBox.innerHTML = '';
+  }
+
+  if (nextBtn) {
+    nextBtn.disabled = true;
+    nextBtn.textContent = (state.currentQuizIndex === quizQuestions.length - 1) ? 'Finish Quiz' : 'Next Question →';
+  }
+
+  if (optionsList) {
+    optionsList.innerHTML = '';
+    const labels = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-opt-btn';
+      btn.innerHTML = `<span class="quiz-opt-label">${labels[idx]}</span> <span>${escapeHtml(opt)}</span>`;
+      btn.addEventListener('click', () => handleQuizOptionClick(idx, btn));
+      optionsList.appendChild(btn);
+    });
+  }
+}
+
+function handleQuizOptionClick(selectedIndex, btnElement) {
+  if (state.quizAnswered) return;
+  state.quizAnswered = true;
+
+  const q = quizQuestions[state.currentQuizIndex];
+  const allOptionBtns = document.querySelectorAll('.quiz-opt-btn');
+  const explanationBox = document.getElementById('quiz-explanation-box');
+  const nextBtn = document.getElementById('btn-quiz-next');
+
+  allOptionBtns.forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === q.answer) {
+      b.classList.add('correct');
+    }
+  });
+
+  if (selectedIndex === q.answer) {
+    state.quizScore++;
+    btnElement.classList.add('correct');
+    showToast('Correct Answer! 🎉');
+  } else {
+    btnElement.classList.add('incorrect');
+    showToast('Incorrect! Check explanation below.');
+  }
+
+  if (explanationBox) {
+    explanationBox.innerHTML = `<strong>💡 Explanation:</strong><p style="margin-top:0.4rem;">${q.explanation}</p>`;
+    explanationBox.classList.add('show');
+  }
+
+  if (nextBtn) {
+    nextBtn.disabled = false;
+  }
+}
+
+function renderQuizResults() {
+  document.getElementById('quiz-active-view').style.display = 'none';
+  const resultView = document.getElementById('quiz-result-view');
+  resultView.style.display = 'block';
+
+  const scoreBadge = document.getElementById('quiz-score-badge');
+  const scoreMsg = document.getElementById('quiz-score-msg');
+  const total = quizQuestions.length;
+  const score = state.quizScore;
+  const percent = Math.round((score / total) * 100);
+
+  if (scoreBadge) scoreBadge.textContent = `${score}/${total}`;
+  if (scoreMsg) {
+    if (percent >= 80) {
+      scoreMsg.textContent = `🏆 JavaScript Master! Exceptional grasp of core JS concepts.`;
+    } else if (percent >= 50) {
+      scoreMsg.textContent = `👍 Good job! Review the tricky topics in the notes to hit 100%.`;
+    } else {
+      scoreMsg.textContent = `📚 Keep learning! Re-read the chapters and try the live playground.`;
+    }
+  }
+}
+
+// ============================================================================
+// 3D Flashcards Deck
+// ============================================================================
+function initFlashcards() {
+  renderFlashcard();
+
+  const cardWrapper = document.getElementById('flashcard-wrapper');
+  if (cardWrapper) {
+    cardWrapper.addEventListener('click', () => {
+      cardWrapper.classList.toggle('flipped');
+      state.flashcardsFlipped = !state.flashcardsFlipped;
+    });
+  }
+
+  const prevBtn = document.getElementById('btn-card-prev');
+  const nextBtn = document.getElementById('btn-card-next');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (state.currentFlashcardIndex > 0) {
+        state.currentFlashcardIndex--;
+        resetAndRenderCard();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (state.currentFlashcardIndex < flashcards.length - 1) {
+        state.currentFlashcardIndex++;
+        resetAndRenderCard();
+      }
+    });
+  }
+}
+
+function resetAndRenderCard() {
+  const cardWrapper = document.getElementById('flashcard-wrapper');
+  if (cardWrapper) {
+    cardWrapper.classList.remove('flipped');
+    state.flashcardsFlipped = false;
+  }
+  setTimeout(renderFlashcard, 150);
+}
+
+function renderFlashcard() {
+  const card = flashcards[state.currentFlashcardIndex];
+  if (!card) return;
+
+  const catEl = document.getElementById('card-category');
+  const countEl = document.getElementById('card-counter');
+  const questionEl = document.getElementById('card-question');
+  const answerEl = document.getElementById('card-answer');
+
+  if (catEl) catEl.textContent = card.category;
+  if (countEl) countEl.textContent = `Card ${state.currentFlashcardIndex + 1} of ${flashcards.length}`;
+  if (questionEl) questionEl.innerHTML = card.question;
+  if (answerEl) answerEl.innerHTML = card.answer.replace(/\n/g, '<br/>');
+}
+
+// ============================================================================
+// FAQ / Interview Accordion
+// ============================================================================
+function initFaqAccordion() {
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      item.classList.toggle('open');
+    });
+  });
+}
+
+// ============================================================================
+// Search Engine across All Topics & Questions
+// ============================================================================
+function initSearch() {
+  const searchInput = document.getElementById('global-search');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    if (!query) {
+      document.querySelectorAll('.topic-card, .faq-item').forEach(el => el.style.display = '');
+      return;
+    }
+
+    // Search in topic notes
+    document.querySelectorAll('.topic-card').forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(query) ? 'block' : 'none';
+    });
+
+    // Search in FAQ
+    document.querySelectorAll('.faq-item').forEach(faq => {
+      const text = faq.innerText.toLowerCase();
+      faq.style.display = text.includes(query) ? 'block' : 'none';
+      if (text.includes(query)) faq.classList.add('open');
+    });
+  });
+}
+
+// ============================================================================
+// Utilities
+// ============================================================================
+function showToast(msg) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `<span>✨</span><span>${msg}</span>`;
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(10px)';
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 2500);
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+</script>
+</body>
+</html>
