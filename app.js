@@ -59,10 +59,10 @@ const quizQuestions = [
     id: 4,
     topic: "Operators & Short-Circuiting",
     question: "What is the result of the following expression?",
-    code: "let val = 0 || 'Sheryians' && null ?? 'Default';\nconsole.log(val);",
-    options: ["0", "'Sheryians'", "null", "'Default'"],
+    code: "let val = 0 || 'AG' && null ?? 'Default';\nconsole.log(val);",
+    options: ["0", "'AG'", "null", "'Default'"],
     answer: 2,
-    explanation: "`'Sheryians' && null` evaluates to `null`. Then `0 || null` evaluates to `null` (since 0 is falsy). Finally `null ?? 'Default'` returns `'Default'`? Wait! `??` only falls back for null/undefined: here `(0 || (null)) ?? 'Default'` => `null ?? 'Default'` returns `'Default'`. However, `&&` has higher precedence than `||`: `0 || ( 'Sheryians' && null )` -> `0 || null` -> `null`. Then `null ?? 'Default'` -> `'Default'`."
+    explanation: "`'AG' && null` evaluates to `null`. Then `0 || null` evaluates to `null` (since 0 is falsy). Finally `null ?? 'Default'` returns `'Default'`? Wait! `??` only falls back for null/undefined: here `(0 || (null)) ?? 'Default'` => `null ?? 'Default'` returns `'Default'`. However, `&&` has higher precedence than `||`: `0 || ( 'AG' && null )` -> `0 || null` -> `null`. Then `null ?? 'Default'` -> `'Default'`."
   },
   {
     id: 5,
@@ -86,9 +86,9 @@ const quizQuestions = [
     id: 7,
     topic: "Objects & Mutability",
     question: "What happens when you modify a property of an `Object.freeze()` object?",
-    code: "'use strict';\nconst user = Object.freeze({ name: 'Harsh' });\nuser.name = 'Sheryians';\nconsole.log(user.name);",
+    code: "'use strict';\nconst user = Object.freeze({ name: 'Harsh' });\nuser.name = 'AG';\nconsole.log(user.name);",
     options: [
-      "'Sheryians'",
+      "'AG'",
       "TypeError: Cannot assign to read only property in strict mode",
       "undefined",
       "NaN"
@@ -216,7 +216,7 @@ console.log("\n=== Reference (Passed by Reference) ===");
 let originalObj = { user: "Akshat", skills: ["JS", "React"] };
 let copiedRef = originalObj; // Points to same heap address!
 
-copiedRef.user = "Sheryians Developer";
+copiedRef.user = "AG Developer";
 console.log("originalObj.user:", originalObj.user); // Modified!
 
 console.log("\n=== Deep Clone using structuredClone ===");

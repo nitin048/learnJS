@@ -1,6 +1,6 @@
 /* ==========================================================================
    JavaScript Masterclass Study Portal - Stylesheet
-   Based on Sheryians Coding School "JavaScript - Learn Everything"
+   Based on AG Coding School "JavaScript - Learn Everything"
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
@@ -23,7 +23,7 @@
   --text-muted: #94a3b8;
   --text-dim: #64748b;
 
-  --accent-primary: #f59e0b; /* Sheryians Gold */
+  --accent-primary: #f59e0b; /* AG Gold */
   --accent-primary-hover: #fbbf24;
   --accent-primary-dim: rgba(245, 158, 11, 0.15);
   --accent-cyan: #06b6d4;
@@ -686,11 +686,13 @@ body {
 }
 .callout-info .callout-title { color: #38bdf8; }
 
+.callout-ag,
 .callout-sheryians {
   background-color: var(--accent-primary-dim);
   border-color: var(--accent-primary);
   color: #fef3c7;
 }
+.callout-ag .callout-title,
 .callout-sheryians .callout-title { color: #fbbf24; }
 
 .callout-warning {

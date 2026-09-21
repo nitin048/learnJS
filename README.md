@@ -1,7 +1,7 @@
 # 🚀 JavaScript Full Course — Complete Masterclass Study Guide & Interactive Portal
 
 <p align="center">
-  <strong>An all-in-one, offline-ready interactive study portal & playground packed with 10 comprehensive modules, live sandboxed IDE, 3D flashcards, quiz engine, tricky interview gotchas, and coding challenges based on Sheryians Coding School's 8-hour masterclass.</strong>
+  <strong>An all-in-one, offline-ready interactive study portal & playground packed with 10 comprehensive modules, live sandboxed IDE, 3D flashcards, quiz engine, tricky interview gotchas, and coding challenges based on AG Coding School's 8-hour masterclass.</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge" alt="License" />
 </p>
 
-> **Source Masterclass**: *JavaScript - Learn Everything (8-Hour Masterclass)* by **Sheryians Coding School**  
+> **Source Masterclass**: *JavaScript - Learn Everything (8-Hour Masterclass)* by **AG Coding School**  
 > **YouTube Video**: [https://www.youtube.com/watch?v=a-wVHL0lpb0](https://www.youtube.com/watch?v=a-wVHL0lpb0)  
 > **Live GitHub Pages Portal**: [https://nitin048.github.io/learnJS/javascript-masterclass-portal.html](https://nitin048.github.io/learnJS/javascript-masterclass-portal.html)  
 > **Offline Standalone File**: [`javascript-masterclass-portal.html`](./javascript-masterclass-portal.html) (Zero dependencies, single-file SPA).
@@ -28,7 +28,7 @@
 
 ## 🌟 Overview
 
-This repository contains the **definitive, end-to-end study companion and interactive learning portal** for mastering modern JavaScript from ground up to senior-level interview readiness. Based on the legendary 8-hour masterclass by **Sheryians Coding School**, this project bridges deep theory, visual architectural diagrams, live code execution, active-recall revision, and hands-on coding challenges.
+This repository contains the **definitive, end-to-end study companion and interactive learning portal** for mastering modern JavaScript from ground up to senior-level interview readiness. Based on the legendary 8-hour masterclass by **AG Coding School**, this project bridges deep theory, visual architectural diagrams, live code execution, active-recall revision, and hands-on coding challenges.
 
 Whether you are preparing for frontend engineering interviews or building a bulletproof foundation in JavaScript runtime mechanics (V8 engine, Call Stack, Memory Heap, Closures, Event Loop preview), this repository provides an all-in-one learning environment.
 
@@ -40,11 +40,11 @@ Launch [`index.html`](./index.html) in any modern browser to explore the full in
 
 | Feature | Description |
 |---|---|
-| 📖 **Structured Study Notes** | In-depth notes for all 10 course modules with visual diagrams, Sheryians tips, warning callouts, and comparison tables. |
+| 📖 **Structured Study Notes** | In-depth notes for all 10 course modules with visual diagrams, AG tips, warning callouts, and comparison tables. |
 | ⚡ **Live Sandboxed IDE** | Browser-based code runner with intercepted virtual console supporting `console.log`, `console.table` (HTML tables), `console.warn`, `console.error` (stack traces), and `console.info`. Run code via `Ctrl + Enter` / `Cmd + Enter`. |
 | ▶ **1-Click "Run in IDE"** | Every code snippet across the notes and challenges can be instantly transferred and executed in the live playground with 1 click. |
 | 🎯 **Interactive Assessment Quiz** | 10 high-yield multiple-choice questions testing nuanced JS mechanics (TDZ, reference mutation, coercion, operator precedence, closures, `reduce`, `Object.freeze`, etc.) with instant scoring, feedback, and technical explanations. |
-| 🗂️ **3D Flashcards Deck** | 10 active-recall flashcards featuring realistic 3D flip animations (`perspective`, `rotateY(180deg)`), question/answer prompts, and Sheryians core knowledge summaries. |
+| 🗂️ **3D Flashcards Deck** | 10 active-recall flashcards featuring realistic 3D flip animations (`perspective`, `rotateY(180deg)`), question/answer prompts, and AG core knowledge summaries. |
 | 💡 **Tricky Interview Q&A** | Interactive accordion answering top interview questions (`[] + {}`, `typeof NaN`, `0.1 + 0.2 !== 0.3`, Function Declaration vs Expression, `map` vs `forEach`, Closures in real-world engineering). |
 | 💻 **Coding Challenges** | Practice tasks (*Array Unique Values*, *Flatten Nested Array*, *Word Frequency Counter*) with pre-built problem templates ready to solve in the IDE. |
 | 🔍 **Global Real-Time Search** | Instantly search concepts, keywords, and interview topics across the entire portal. |
@@ -268,7 +268,7 @@ The interactive quiz in the portal (`index.html` View 3) covers 10 targeted inte
 1. **Variables & Hoisting**: `var a` hoisting (`undefined`) vs `let b` TDZ (`ReferenceError`).
 2. **Data Types & Memory**: Reference pointer mutation between array variables pointing to the heap.
 3. **Type Coercion**: `[] + []` (`""`) vs `[] + {}` (`"[object Object]"`).
-4. **Operators & Precedence**: Evaluation order of `0 || 'Sheryians' && null ?? 'Default'`.
+4. **Operators & Precedence**: Evaluation order of `0 || 'AG' && null ?? 'Default'`.
 5. **Functions & Closures**: `var` in asynchronous `for` loop timer callbacks producing `3, 3, 3`.
 6. **Array Methods**: Accumulator behavior in `reduce((acc, curr) => acc + curr, 5)`.
 7. **Objects & Mutability**: Attempting mutation on `Object.freeze()` under `'use strict'` throwing `TypeError`.
@@ -386,7 +386,7 @@ learnJS/
 
 ## 🎓 Attribution & Credits
 
-- **Course Creator**: [Sheryians Coding School](https://www.youtube.com/@SheryiansCodingSchool)
+- **Course Creator**: [AG Coding School](https://www.youtube.com/@SheryiansCodingSchool)
 - **Lead Instructor**: Harsh Sharma
 - **Original Masterclass**: [JavaScript - Learn Everything (8-Hour Masterclass)](https://www.youtube.com/watch?v=a-wVHL0lpb0)
 
