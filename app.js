@@ -305,7 +305,7 @@ function initNavigation() {
       if (e.target.classList.contains('module-checkbox')) return;
       e.preventDefault();
       switchView('notes');
-      
+
       const targetId = link.getAttribute('href').substring(1);
       const targetCard = document.getElementById(targetId);
       if (targetCard) {
@@ -325,7 +325,7 @@ function initNavigation() {
 
 function switchView(viewName) {
   state.activeView = viewName;
-  
+
   document.querySelectorAll('.tab-btn').forEach(t => {
     t.classList.toggle('active', t.dataset.view === viewName);
   });
@@ -340,7 +340,7 @@ function switchView(viewName) {
 // Progress & LocalStorage
 function initProgressTracker() {
   const checkboxes = document.querySelectorAll('.module-checkbox');
-  
+
   checkboxes.forEach(cb => {
     const moduleId = cb.dataset.module;
     if (state.completedTopics.includes(moduleId)) {
